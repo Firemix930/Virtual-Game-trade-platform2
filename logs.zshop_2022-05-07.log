@@ -1,0 +1,1280 @@
+[2022-05-07T20:14:01.205] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Load ./config-default.js...
+[2022-05-07T20:14:01.207] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Cannot load ./config-override.js.
+[2022-05-07T20:14:01.569] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - process.env.NODE_ENV = [undefined]
+[2022-05-07T20:14:01.569] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - isProduction = [false]
+[2022-05-07T20:14:01.594] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - process controller: cart-contrl.js...
+[2022-05-07T20:14:01.785] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - init sequelize...
+[2022-05-07T20:14:01.805] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - import model from file advert.js...
+[2022-05-07T20:14:01.806] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - model defined for table: advert
+{
+  "id": {
+    "type": "INTEGER",
+    "autoIncrement": true,
+    "primaryKey": true,
+    "allowNull": false
+  },
+  "name": {
+    "type": "STRING(100)",
+    "allowNull": false
+  },
+  "description": {
+    "type": "STRING(200)",
+    "allowNull": true
+  },
+  "position": {
+    "type": "INTEGER",
+    "allowNull": false
+  },
+  "image": {
+    "type": "STRING(100)",
+    "allowNull": false
+  },
+  "url": {
+    "type": "STRING(100)",
+    "allowNull": true
+  },
+  "createdAt": {
+    "type": "DATE",
+    "allowNull": false
+  },
+  "updatedAt": {
+    "type": "DATE",
+    "allowNull": false
+  },
+  "version": {
+    "type": "BIGINT",
+    "allowNull": false,
+    "defaultValue": 0
+  }
+}
+[2022-05-07T20:14:01.827] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - import model from file cart.js...
+[2022-05-07T20:14:01.829] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - model defined for table: cart
+{
+  "id": {
+    "type": "INTEGER",
+    "autoIncrement": true,
+    "primaryKey": true,
+    "allowNull": false
+  },
+  "userId": {
+    "type": "STRING(30)",
+    "allowNull": false
+  },
+  "prodId": {
+    "type": "INTEGER",
+    "allowNull": false
+  },
+  "count": {
+    "type": "INTEGER",
+    "allowNull": false
+  },
+  "createdAt": {
+    "type": "DATE",
+    "allowNull": false
+  },
+  "updatedAt": {
+    "type": "DATE",
+    "allowNull": false
+  },
+  "version": {
+    "type": "BIGINT",
+    "allowNull": false,
+    "defaultValue": 0
+  }
+}
+[2022-05-07T20:14:01.838] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - import model from file collection.js...
+[2022-05-07T20:14:01.839] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - model defined for table: collection
+{
+  "id": {
+    "type": "STRING(50)",
+    "primaryKey": true
+  },
+  "userId": {
+    "type": "STRING(30)",
+    "allowNull": false
+  },
+  "prodId": {
+    "type": "INTEGER",
+    "allowNull": false
+  },
+  "createdAt": {
+    "type": "DATE",
+    "allowNull": false
+  },
+  "updatedAt": {
+    "type": "DATE",
+    "allowNull": false
+  },
+  "version": {
+    "type": "BIGINT",
+    "allowNull": false,
+    "defaultValue": 0
+  }
+}
+[2022-05-07T20:14:01.845] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - import model from file group_attri.js...
+[2022-05-07T20:14:01.850] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - model defined for table: group_attri
+{
+  "id": {
+    "type": "INTEGER",
+    "autoIncrement": true,
+    "primaryKey": true,
+    "allowNull": false
+  },
+  "prodGroup": {
+    "type": "INTEGER",
+    "allowNull": false
+  },
+  "attriId": {
+    "type": "STRING(20)",
+    "allowNull": false
+  },
+  "attriName": {
+    "type": "STRING(30)",
+    "allowNull": false
+  },
+  "createdAt": {
+    "type": "DATE",
+    "allowNull": false
+  },
+  "updatedAt": {
+    "type": "DATE",
+    "allowNull": false
+  },
+  "version": {
+    "type": "BIGINT",
+    "allowNull": false,
+    "defaultValue": 0
+  }
+}
+[2022-05-07T20:14:01.859] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - import model from file group_attri_value.js...
+[2022-05-07T20:14:01.864] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - model defined for table: group_attri_value
+{
+  "id": {
+    "type": "INTEGER",
+    "autoIncrement": true,
+    "primaryKey": true,
+    "allowNull": false
+  },
+  "groupAttriId": {
+    "type": "INTEGER",
+    "allowNull": false
+  },
+  "attriValue": {
+    "type": "STRING(200)",
+    "allowNull": false
+  },
+  "createdAt": {
+    "type": "DATE",
+    "allowNull": false
+  },
+  "updatedAt": {
+    "type": "DATE",
+    "allowNull": false
+  },
+  "version": {
+    "type": "BIGINT",
+    "allowNull": false,
+    "defaultValue": 0
+  }
+}
+[2022-05-07T20:14:01.872] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - import model from file order.js...
+[2022-05-07T20:14:01.874] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - model defined for table: order
+{
+  "id": {
+    "type": "STRING(50)",
+    "primaryKey": true
+  },
+  "userId": {
+    "type": "STRING(30)",
+    "allowNull": false
+  },
+  "province": {
+    "type": "STRING(20)",
+    "allowNull": false
+  },
+  "city": {
+    "type": "STRING(20)",
+    "allowNull": false
+  },
+  "area": {
+    "type": "STRING(20)",
+    "allowNull": false
+  },
+  "address": {
+    "type": "STRING(100)",
+    "allowNull": false
+  },
+  "recipient": {
+    "type": "STRING(20)",
+    "allowNull": false
+  },
+  "recipientPhone": {
+    "type": "STRING(30)",
+    "allowNull": false
+  },
+  "deliveryType": {
+    "type": "INTEGER",
+    "defaultValue": 1,
+    "allowNull": false
+  },
+  "expressCompany": {
+    "type": "STRING(50)",
+    "allowNull": false
+  },
+  "expressNumber": {
+    "type": "STRING(50)",
+    "allowNull": false
+  },
+  "status": {
+    "type": "INTEGER",
+    "defaultValue": 1,
+    "allowNull": false
+  },
+  "deliveryFee": {
+    "type": "DECIMAL",
+    "defaultValue": 10,
+    "allowNull": false
+  },
+  "prodPrice": {
+    "type": "DECIMAL",
+    "allowNull": false
+  },
+  "totalPrice": {
+    "type": "DECIMAL",
+    "allowNull": false
+  },
+  "payStartTime": {
+    "type": "DATE",
+    "allowNull": true
+  },
+  "createdAt": {
+    "type": "DATE",
+    "allowNull": false
+  },
+  "updatedAt": {
+    "type": "DATE",
+    "allowNull": false
+  },
+  "version": {
+    "type": "BIGINT",
+    "allowNull": false,
+    "defaultValue": 0
+  }
+}
+[2022-05-07T20:14:01.890] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - import model from file order_prod.js...
+[2022-05-07T20:14:01.891] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - model defined for table: order_prod
+{
+  "id": {
+    "type": "STRING(50)",
+    "primaryKey": true
+  },
+  "orderId": {
+    "type": "STRING(50)",
+    "allowNull": false
+  },
+  "prodId": {
+    "type": "INTEGER",
+    "allowNull": false
+  },
+  "price": {
+    "type": "DECIMAL",
+    "allowNull": false
+  },
+  "count": {
+    "type": "INTEGER",
+    "allowNull": false
+  },
+  "cartId": {
+    "type": "INTEGER",
+    "allowNull": false
+  },
+  "createdAt": {
+    "type": "DATE",
+    "allowNull": false
+  },
+  "updatedAt": {
+    "type": "DATE",
+    "allowNull": false
+  },
+  "version": {
+    "type": "BIGINT",
+    "allowNull": false,
+    "defaultValue": 0
+  }
+}
+[2022-05-07T20:14:01.899] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - import model from file product.js...
+[2022-05-07T20:14:01.900] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - model defined for table: product
+{
+  "id": {
+    "type": "INTEGER",
+    "autoIncrement": true,
+    "primaryKey": true,
+    "allowNull": false
+  },
+  "groupId": {
+    "type": "INTEGER",
+    "allowNull": false
+  },
+  "name": {
+    "type": "STRING(100)",
+    "allowNull": false
+  },
+  "description": {
+    "type": "STRING(200)",
+    "allowNull": false
+  },
+  "price": {
+    "type": "DECIMAL",
+    "allowNull": false
+  },
+  "image": {
+    "type": "STRING(100)",
+    "allowNull": false
+  },
+  "recommend": {
+    "type": "INTEGER",
+    "allowNull": true
+  },
+  "sales": {
+    "type": "INTEGER",
+    "defaultValue": 0,
+    "allowNull": false
+  },
+  "stock": {
+    "type": "INTEGER",
+    "defaultValue": 0,
+    "allowNull": false
+  },
+  "detailImages": {
+    "type": "STRING(300)",
+    "allowNull": false
+  },
+  "detailHtml": {
+    "type": "STRING(100)",
+    "allowNull": false
+  },
+  "createdAt": {
+    "type": "DATE",
+    "allowNull": false
+  },
+  "updatedAt": {
+    "type": "DATE",
+    "allowNull": false
+  },
+  "version": {
+    "type": "BIGINT",
+    "allowNull": false,
+    "defaultValue": 0
+  }
+}
+[2022-05-07T20:14:01.910] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - import model from file prod_attri.js...
+[2022-05-07T20:14:01.911] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - model defined for table: prod_attri
+{
+  "id": {
+    "type": "STRING(50)",
+    "primaryKey": true
+  },
+  "prodId": {
+    "type": "INTEGER",
+    "allowNull": false
+  },
+  "groupAttriValueId": {
+    "type": "INTEGER",
+    "allowNull": false
+  },
+  "createdAt": {
+    "type": "DATE",
+    "allowNull": false
+  },
+  "updatedAt": {
+    "type": "DATE",
+    "allowNull": false
+  },
+  "version": {
+    "type": "BIGINT",
+    "allowNull": false,
+    "defaultValue": 0
+  }
+}
+[2022-05-07T20:14:01.915] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - import model from file user.js...
+[2022-05-07T20:14:01.924] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - model defined for table: user
+{
+  "id": {
+    "type": "STRING(50)",
+    "primaryKey": true
+  },
+  "email": {
+    "type": "STRING(100)",
+    "unique": true,
+    "allowNull": true
+  },
+  "mobile": {
+    "type": "STRING(11)",
+    "unique": true,
+    "allowNull": false
+  },
+  "userId": {
+    "type": "STRING(30)",
+    "unique": true,
+    "allowNull": false
+  },
+  "passwd": {
+    "type": "STRING(100)",
+    "allowNull": false
+  },
+  "name": {
+    "type": "STRING(100)",
+    "allowNull": false
+  },
+  "gender": {
+    "type": "BOOLEAN",
+    "allowNull": true
+  },
+  "headImage": {
+    "type": "STRING(100)",
+    "allowNull": false
+  },
+  "createdAt": {
+    "type": "DATE",
+    "allowNull": false
+  },
+  "updatedAt": {
+    "type": "DATE",
+    "allowNull": false
+  },
+  "version": {
+    "type": "BIGINT",
+    "allowNull": false,
+    "defaultValue": 0
+  }
+}
+[2022-05-07T20:14:01.949] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - import model from file user_address.js...
+[2022-05-07T20:14:01.951] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - model defined for table: user_address
+{
+  "id": {
+    "type": "STRING(50)",
+    "primaryKey": true
+  },
+  "userId": {
+    "type": "STRING(30)",
+    "allowNull": false
+  },
+  "province": {
+    "type": "STRING(20)",
+    "allowNull": false
+  },
+  "city": {
+    "type": "STRING(20)",
+    "allowNull": false
+  },
+  "area": {
+    "type": "STRING(20)",
+    "allowNull": false
+  },
+  "address": {
+    "type": "STRING(100)",
+    "allowNull": false
+  },
+  "name": {
+    "type": "STRING(20)",
+    "allowNull": false
+  },
+  "phone": {
+    "type": "STRING(30)",
+    "allowNull": false
+  },
+  "type": {
+    "type": "INTEGER",
+    "allowNull": false
+  },
+  "createdAt": {
+    "type": "DATE",
+    "allowNull": false
+  },
+  "updatedAt": {
+    "type": "DATE",
+    "allowNull": false
+  },
+  "version": {
+    "type": "BIGINT",
+    "allowNull": false,
+    "defaultValue": 0
+  }
+}
+[2022-05-07T20:14:01.956] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: GET /zshop/user/cart
+[2022-05-07T20:14:01.961] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: POST /zshop/userapi/delCartProd
+[2022-05-07T20:14:01.961] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: POST /zshop/userapi/chgCartProdCount
+[2022-05-07T20:14:01.961] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: POST /zshop/userapi/addCartProd
+[2022-05-07T20:14:01.961] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - process controller: collection-contrl.js...
+[2022-05-07T20:14:01.963] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: GET /zshop/user/collection/index
+[2022-05-07T20:14:01.963] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: POST /zshop/userapi/collection/act
+[2022-05-07T20:14:01.969] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: GET /zshop/user/collection/del/:id
+[2022-05-07T20:14:01.969] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - process controller: index-contrl.js...
+[2022-05-07T20:14:01.974] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: GET /zshop/
+[2022-05-07T20:14:01.975] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: GET /zshop/api/search/:key/:limit/:offset/:ordertype
+[2022-05-07T20:14:01.975] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: GET /zshop/user/userPage
+[2022-05-07T20:14:01.975] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: POST /zshop/userapi/checkUserInfo
+[2022-05-07T20:14:01.975] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: POST /zshop/userapi/uptUserInfo
+[2022-05-07T20:14:01.976] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: GET /zshop/user/uptPassPage
+[2022-05-07T20:14:01.976] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: POST /zshop/userapi/checkPassword
+[2022-05-07T20:14:01.976] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: POST /zshop/userapi/uptPass
+[2022-05-07T20:14:01.976] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - process controller: order-contrl.js...
+[2022-05-07T20:14:01.977] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: GET /zshop/user/settlement/:orderId
+[2022-05-07T20:14:01.986] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: GET /zshop/user/orderDetail/:orderId
+[2022-05-07T20:14:01.986] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: POST /zshop/userapi/settlementAct
+[2022-05-07T20:14:01.986] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: POST /zshop/userapi/buyNow
+[2022-05-07T20:14:01.986] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: POST /zshop/userapi/confirmOrder
+[2022-05-07T20:14:01.987] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: POST /zshop/userapi/confirmReceipt
+[2022-05-07T20:14:01.988] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: POST /zshop/userapi/delOrder
+[2022-05-07T20:14:01.988] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: POST /zshop/userapi/cancelOrder
+[2022-05-07T20:14:01.988] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: POST /zshop/userapi/paySuccCancelOrder
+[2022-05-07T20:14:01.988] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: POST /zshop/userapi/payOrder
+[2022-05-07T20:14:01.988] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: GET /zshop/user/paySuccess/:orderId
+[2022-05-07T20:14:01.988] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: GET /zshop/user/orderList
+[2022-05-07T20:14:01.989] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: POST /zshop/userapi/getOrderList
+[2022-05-07T20:14:01.989] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - process controller: prod-contrl.js...
+[2022-05-07T20:14:01.990] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: GET /zshop/prodDetail/:pid
+[2022-05-07T20:14:01.990] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - process controller: signin-contrl.js...
+[2022-05-07T20:14:01.991] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - openCaptcha = [false]
+[2022-05-07T20:14:01.992] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: POST /zshop/api/signin
+[2022-05-07T20:14:01.992] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: GET /zshop/signout
+[2022-05-07T20:14:01.992] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: GET /zshop/login
+[2022-05-07T20:14:01.992] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: GET /zshop/resetPass
+[2022-05-07T20:14:01.992] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: GET /zshop/registPage
+[2022-05-07T20:14:01.993] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: POST /zshop/api/regist
+[2022-05-07T20:14:01.993] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: POST /zshop/api/countUserMobile
+[2022-05-07T20:14:01.993] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: POST /zshop/userapi/getLoginUserInfo
+[2022-05-07T20:14:01.993] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: POST /zshop/api/checkCaptcha
+[2022-05-07T20:14:01.993] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - register URL mapping: GET /zshop/captcha
+[2022-05-07T20:14:01.995] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - app started at port 3333...
+[2022-05-07T20:14:20.005] [INFO] [5ce6667d0b454508bdb345ee4a06c1b4] zshop - Process GET /zshop...
+[2022-05-07T20:14:20.008] [INFO] [5ce6667d0b454508bdb345ee4a06c1b4] zshop - ===index in===
+[2022-05-07T20:14:20.111] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `groupId`, `name`, `description`, `price`, `image`, `recommend`, `sales`, `stock`, `detailImages`, `detailHtml`, `createdAt`, `updatedAt`, `version` FROM `product` AS `product` WHERE `product`.`recommend` = 1;
+[2022-05-07T20:14:20.121] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `name`, `description`, `position`, `image`, `url`, `createdAt`, `updatedAt`, `version` FROM `advert` AS `advert` WHERE `advert`.`position` = 1;
+[2022-05-07T20:14:20.126] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `name`, `description`, `position`, `image`, `url`, `createdAt`, `updatedAt`, `version` FROM `advert` AS `advert` WHERE `advert`.`position` = 2;
+[2022-05-07T20:14:20.128] [INFO] [5ce6667d0b454508bdb345ee4a06c1b4] zshop - ===index mid===
+[2022-05-07T20:14:20.153] [INFO] [5ce6667d0b454508bdb345ee4a06c1b4] zshop - ===index out===
+[2022-05-07T20:14:20.155] [INFO] [5ce6667d0b454508bdb345ee4a06c1b4] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.192] [INFO] [c51c2953f4e54726bcd57ea32ffa0db1] zshop - Process GET /static/css/swiper-4.1.6.min.css...
+[2022-05-07T20:14:20.193] [INFO] [4aa49625780349f6aa0f1ed5a556948a] zshop - Process GET /static/css/weui.min.css...
+[2022-05-07T20:14:20.194] [INFO] [e7c447fc597049e89692f230e8c69224] zshop - Process GET /static/css/style.css...
+[2022-05-07T20:14:20.204] [INFO] [62313b3a27ac4211a135e2212cd3aba7] zshop - Process GET /static/js/lib/require.js...
+[2022-05-07T20:14:20.205] [INFO] [4384ac094af94ebfaf4ca53a482c0a94] zshop - Process GET /static/images/vt/s1.png...
+[2022-05-07T20:14:20.205] [INFO] [95488de6ec4a40b79fbc04a39d2e6095] zshop - Process GET /static/images/vt/s2.png...
+[2022-05-07T20:14:20.207] [INFO] [95488de6ec4a40b79fbc04a39d2e6095] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.214] [INFO] [95488de6ec4a40b79fbc04a39d2e6095] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.219] [INFO] [95488de6ec4a40b79fbc04a39d2e6095] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.220] [INFO] [95488de6ec4a40b79fbc04a39d2e6095] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.220] [INFO] [95488de6ec4a40b79fbc04a39d2e6095] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.227] [INFO] [95488de6ec4a40b79fbc04a39d2e6095] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.230] [INFO] [102178344ffa45b88e857b4e317963de] zshop - Process GET /static/images/vt/s3.png...
+[2022-05-07T20:14:20.231] [INFO] [0ad0cba4b44a42d6b759c559753bfee6] zshop - Process GET /static/images/menu.png...
+[2022-05-07T20:14:20.232] [INFO] [726892fa002f4e14b851251a35a4ef6d] zshop - Process GET /static/images/vt/mid.png...
+[2022-05-07T20:14:20.232] [INFO] [726892fa002f4e14b851251a35a4ef6d] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.235] [INFO] [726892fa002f4e14b851251a35a4ef6d] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.245] [INFO] [726892fa002f4e14b851251a35a4ef6d] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.246] [INFO] [8b4a74d40d5e4fc190ef7edb54f9c11b] zshop - Process GET /static/images/product/good1.jpg...
+[2022-05-07T20:14:20.247] [INFO] [6b90c6271bb94312a5902465ec48dcba] zshop - Process GET /static/images/product/good2.jpg...
+[2022-05-07T20:14:20.248] [INFO] [6b90c6271bb94312a5902465ec48dcba] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.256] [INFO] [a76c0799b155480f90c1f210ffba95d3] zshop - Process GET /static/images/product/good3.jpg...
+[2022-05-07T20:14:20.262] [INFO] [2d6623de19e94c9f940255a0bedc4e0b] zshop - Process GET /static/images/product/good4.jpg...
+[2022-05-07T20:14:20.269] [INFO] [b69392700cd04f21aa4ad167f9f82f20] zshop - Process GET /static/images/product/good5.jpg...
+[2022-05-07T20:14:20.275] [INFO] [30a773284e2a44c8b4290607714da131] zshop - Process GET /static/images/product/good6.jpg...
+[2022-05-07T20:14:20.276] [INFO] [30a773284e2a44c8b4290607714da131] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.282] [INFO] [30a773284e2a44c8b4290607714da131] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.302] [INFO] [30a773284e2a44c8b4290607714da131] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.307] [INFO] [e3653be3d15246e0b4c1ca3935c303b1] zshop - Process GET /static/images/center-icon-order-all.png...
+[2022-05-07T20:14:20.307] [INFO] [e3653be3d15246e0b4c1ca3935c303b1] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.308] [INFO] [e3653be3d15246e0b4c1ca3935c303b1] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.309] [INFO] [9935a7a0517c4404a320f9466f0ab249] zshop - Process GET /static/images/center-icon-order-dfk.png...
+[2022-05-07T20:14:20.309] [INFO] [cd21b19d4fd84cf79fe2bd971bca2d8f] zshop - Process GET /static/images/center-icon-order-dfh.png...
+[2022-05-07T20:14:20.310] [INFO] [379e7aa995e7436dbbdc011048eda907] zshop - Process GET /static/images/center-icon-order-dsh.png...
+[2022-05-07T20:14:20.310] [INFO] [b6bf756b544c470eb6f82094a362cc0d] zshop - Process GET /static/images/center-icon-order-dpj.png...
+[2022-05-07T20:14:20.318] [INFO] [01c9fa1905c14e5598398b5415cf174a] zshop - Process GET /static/images/center-icon-sc.png...
+[2022-05-07T20:14:20.329] [INFO] [01c9fa1905c14e5598398b5415cf174a] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.330] [INFO] [01c9fa1905c14e5598398b5415cf174a] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.331] [INFO] [01c9fa1905c14e5598398b5415cf174a] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.331] [INFO] [01c9fa1905c14e5598398b5415cf174a] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.340] [INFO] [2bbfd1cf5423479ea6dcd5898edb416d] zshop - Process GET /static/images/my.png...
+[2022-05-07T20:14:20.340] [INFO] [4f8349aab3fb48cab7ce6c4e49893b9a] zshop - Process GET /static/images/goods.png...
+[2022-05-07T20:14:20.341] [INFO] [8a4b93496b5b4561b5c1929abd7a0a8c] zshop - Process GET /static/images/index_on.png...
+[2022-05-07T20:14:20.341] [INFO] [8a4b93496b5b4561b5c1929abd7a0a8c] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.342] [INFO] [8a4b93496b5b4561b5c1929abd7a0a8c] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.343] [INFO] [7d5ce6d32c17497cb0231e2d6904506b] zshop - Process GET /static/images/cart.png...
+[2022-05-07T20:14:20.343] [INFO] [56676218945a41ffbd63e75d6af46d39] zshop - Process GET /static/images/center-icon-dlmm.png...
+[2022-05-07T20:14:20.344] [INFO] [d7d81e438ef547b18bd3bb8d0e180df5] zshop - Process GET /static/images/center-icon-out.png...
+[2022-05-07T20:14:20.345] [INFO] [d7d81e438ef547b18bd3bb8d0e180df5] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.345] [INFO] [d7d81e438ef547b18bd3bb8d0e180df5] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.354] [INFO] [80dd7e4a6c3a42b2925ec6ac5b132d2e] zshop - Process GET /static/js/app/index-main.js...
+[2022-05-07T20:14:20.354] [INFO] [80dd7e4a6c3a42b2925ec6ac5b132d2e] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.355] [INFO] [80dd7e4a6c3a42b2925ec6ac5b132d2e] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.356] [INFO] [80dd7e4a6c3a42b2925ec6ac5b132d2e] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.356] [INFO] [80dd7e4a6c3a42b2925ec6ac5b132d2e] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.357] [INFO] [80dd7e4a6c3a42b2925ec6ac5b132d2e] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.363] [INFO] [0d4e3be702b74f36b7a821f982f46170] zshop - Process GET /static/js/app/index.js...
+[2022-05-07T20:14:20.366] [INFO] [0d4e3be702b74f36b7a821f982f46170] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.385] [INFO] [1bfb29e2d97a444f9119fd2d21b74883] zshop - Process GET /static/js/lib/jquery.js...
+[2022-05-07T20:14:20.387] [INFO] [aa5f6b993206474497bbdebedcf2681d] zshop - Process GET /static/js/lib/vue.min.js...
+[2022-05-07T20:14:20.387] [INFO] [503b00cbbe924e7c87ae3836837d369a] zshop - Process GET /static/js/lib/vue-resource.min.js...
+[2022-05-07T20:14:20.388] [INFO] [6f48ab38d8db4a0f9f3ff9449b9defb1] zshop - Process GET /static/js/lib/swiper-4.1.6.min.js...
+[2022-05-07T20:14:20.388] [INFO] [44bd00601e5f42e2aedab29a39c343c2] zshop - Process GET /static/js/app/public-tip.js...
+[2022-05-07T20:14:20.389] [INFO] [ca21fbd339074b6d8ca1acf5255bb158] zshop - Process GET /static/js/app/public.js...
+[2022-05-07T20:14:20.390] [INFO] [ca21fbd339074b6d8ca1acf5255bb158] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.391] [INFO] [ca21fbd339074b6d8ca1acf5255bb158] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.392] [INFO] [ca21fbd339074b6d8ca1acf5255bb158] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.392] [INFO] [ca21fbd339074b6d8ca1acf5255bb158] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.393] [INFO] [ca21fbd339074b6d8ca1acf5255bb158] zshop - ctx.response.status=200
+[2022-05-07T20:14:20.393] [INFO] [ca21fbd339074b6d8ca1acf5255bb158] zshop - ctx.response.status=200
+[2022-05-07T20:14:22.047] [INFO] [c16d4e89758640b3b9f835389fd1a60f] zshop - Process GET /static/images/index.png...
+[2022-05-07T20:14:22.047] [INFO] [d0d7ddc420c345279d1890c60b551500] zshop - Process GET /static/images/goods_on.png...
+[2022-05-07T20:14:22.048] [INFO] [d0d7ddc420c345279d1890c60b551500] zshop - ctx.response.status=200
+[2022-05-07T20:14:22.049] [INFO] [d0d7ddc420c345279d1890c60b551500] zshop - ctx.response.status=200
+[2022-05-07T20:14:23.719] [INFO] [970c5fd99b1a4bbf83ba5ad3fede111f] zshop - Process GET /static/images/cart_on.png...
+[2022-05-07T20:14:23.722] [INFO] [970c5fd99b1a4bbf83ba5ad3fede111f] zshop - ctx.response.status=200
+[2022-05-07T20:14:23.729] [INFO] [164de9146fa945f0a904c20a889471a4] zshop - Process GET /zshop/user/cart...
+[2022-05-07T20:14:23.732] [INFO] [164de9146fa945f0a904c20a889471a4] zshop - ctx.response.status=302
+[2022-05-07T20:14:23.733] [INFO] [6cee3edd3cdf432482ed25c93df41de4] zshop - Process GET /zshop/login?loginSuccUrl=/zshop/user/cart...
+[2022-05-07T20:14:23.738] [INFO] [6cee3edd3cdf432482ed25c93df41de4] zshop - ctx.response.status=200
+[2022-05-07T20:14:23.753] [INFO] [49623d1511934c9babf8ee6f4a0dbb3f] zshop - Process GET /static/css/weui.min.css...
+[2022-05-07T20:14:23.755] [INFO] [bafc42af46294f598152b351ca7b0ab0] zshop - Process GET /static/css/style.css...
+[2022-05-07T20:14:23.756] [INFO] [7646a7942f074870b4b0c291149f9798] zshop - Process GET /static/js/lib/require.js...
+[2022-05-07T20:14:23.756] [INFO] [c123639deb084da891aa06037d20e866] zshop - Process GET /static/images/vcode.jpg...
+[2022-05-07T20:14:23.757] [INFO] [c123639deb084da891aa06037d20e866] zshop - ctx.response.status=200
+[2022-05-07T20:14:23.758] [INFO] [c123639deb084da891aa06037d20e866] zshop - ctx.response.status=200
+[2022-05-07T20:14:23.758] [INFO] [c123639deb084da891aa06037d20e866] zshop - ctx.response.status=200
+[2022-05-07T20:14:23.758] [INFO] [c123639deb084da891aa06037d20e866] zshop - ctx.response.status=200
+[2022-05-07T20:14:23.794] [INFO] [e988cea1f1a4487c86ee8b25802640f9] zshop - Process GET /static/js/app/login.js...
+[2022-05-07T20:14:23.795] [INFO] [e988cea1f1a4487c86ee8b25802640f9] zshop - ctx.response.status=200
+[2022-05-07T20:14:23.810] [INFO] [fd76670b252b49a5a8c4a240daa98a05] zshop - Process GET /static/js/lib/jquery.js...
+[2022-05-07T20:14:23.811] [INFO] [37f8b98cfb324abab75a636b446c52a9] zshop - Process GET /static/js/app/public-tip.js...
+[2022-05-07T20:14:23.811] [INFO] [37f8b98cfb324abab75a636b446c52a9] zshop - ctx.response.status=200
+[2022-05-07T20:14:23.812] [INFO] [37f8b98cfb324abab75a636b446c52a9] zshop - ctx.response.status=200
+[2022-05-07T20:14:23.826] [INFO] [8ed79db2e9544a52a73b1f56883f3fcf] zshop - Process GET /static/images/icon-back.png...
+[2022-05-07T20:14:23.826] [INFO] [824317ce61c44af18747ffb5abd775af] zshop - Process GET /static/images/index_bak.png...
+[2022-05-07T20:14:23.827] [INFO] [824317ce61c44af18747ffb5abd775af] zshop - ctx.response.status=200
+[2022-05-07T20:14:23.828] [INFO] [824317ce61c44af18747ffb5abd775af] zshop - ctx.response.status=200
+[2022-05-07T20:14:27.350] [INFO] [c772c4f9ef7f4e628687a91b63d40434] zshop - Process GET /static/images/cart.png...
+[2022-05-07T20:14:27.351] [INFO] [5d32e849837547bca12d0824ff5ba531] zshop - Process GET /static/images/index_on.png...
+[2022-05-07T20:14:27.352] [INFO] [5d32e849837547bca12d0824ff5ba531] zshop - ctx.response.status=200
+[2022-05-07T20:14:27.353] [INFO] [5d32e849837547bca12d0824ff5ba531] zshop - ctx.response.status=200
+[2022-05-07T20:14:28.105] [INFO] [f7673cb03bd24b2a81113805140ed327] zshop - Process GET /zshop/prodDetail/1...
+[2022-05-07T20:14:28.106] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `groupId`, `name`, `description`, `price`, `image`, `recommend`, `sales`, `stock`, `detailImages`, `detailHtml`, `createdAt`, `updatedAt`, `version` FROM `product` AS `product` WHERE `product`.`id` = 1;
+[2022-05-07T20:14:28.109] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `prodGroup`, `attriId`, `attriName`, `createdAt`, `updatedAt`, `version` FROM `group_attri` AS `group_attri` WHERE `group_attri`.`prodGroup` = 1;
+[2022-05-07T20:14:28.119] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT t.attriId, t.attriName, t1.attriValue, t2.prodId FROM group_attri t LEFT JOIN group_attri_value t1 ON t.id = t1.groupAttriId LEFT JOIN prod_attri t2 ON t1.id = t2.groupAttriValueId WHERE t.prodGroup = 1
+[2022-05-07T20:14:28.132] [INFO] [f7673cb03bd24b2a81113805140ed327] zshop - ctx.response.status=200
+[2022-05-07T20:14:28.156] [INFO] [91cb766d409140ada0a99776c9abb513] zshop - Process GET /static/css/weui.min.css...
+[2022-05-07T20:14:28.158] [INFO] [3a1ac401d4bc4b98bf8d84c2e35673b9] zshop - Process GET /static/css/style.css...
+[2022-05-07T20:14:28.159] [INFO] [bef1067c5fd1496f8a3a4ec342485347] zshop - Process GET /static/css/swiper-4.1.6.min.css...
+[2022-05-07T20:14:28.159] [INFO] [2223989a17ef4e8ab56a4777d2f9641b] zshop - Process GET /static/js/lib/require.js...
+[2022-05-07T20:14:28.160] [INFO] [217cc260d4d44de6b0c29e548972c142] zshop - Process GET /static/images/product/detail/prod_detail0.jpg...
+[2022-05-07T20:14:28.161] [INFO] [60a752dd9ac04e9cb85971ab23a66d3b] zshop - Process GET /static/images/product/detail/prod_detail1.jpg...
+[2022-05-07T20:14:28.161] [INFO] [60a752dd9ac04e9cb85971ab23a66d3b] zshop - ctx.response.status=200
+[2022-05-07T20:14:28.162] [INFO] [60a752dd9ac04e9cb85971ab23a66d3b] zshop - ctx.response.status=200
+[2022-05-07T20:14:28.162] [INFO] [60a752dd9ac04e9cb85971ab23a66d3b] zshop - ctx.response.status=200
+[2022-05-07T20:14:28.163] [INFO] [60a752dd9ac04e9cb85971ab23a66d3b] zshop - ctx.response.status=200
+[2022-05-07T20:14:28.172] [INFO] [60a752dd9ac04e9cb85971ab23a66d3b] zshop - ctx.response.status=200
+[2022-05-07T20:14:28.174] [INFO] [1bacda86e82d4f62a99e358a6bf2f04d] zshop - Process GET /static/images/product/detail/prod_detail2.jpg...
+[2022-05-07T20:14:28.174] [INFO] [1bacda86e82d4f62a99e358a6bf2f04d] zshop - ctx.response.status=200
+[2022-05-07T20:14:28.175] [INFO] [ab59da507a554bc6aa75793d96020a38] zshop - Process GET /static/images/product/detail/prod_detail3.jpg...
+[2022-05-07T20:14:28.177] [INFO] [ab59da507a554bc6aa75793d96020a38] zshop - ctx.response.status=200
+[2022-05-07T20:14:28.178] [INFO] [ab59da507a554bc6aa75793d96020a38] zshop - ctx.response.status=200
+[2022-05-07T20:14:28.198] [INFO] [02200f4987f34f59872db052f444a981] zshop - Process GET /static/js/app/prod-detail.js...
+[2022-05-07T20:14:28.199] [INFO] [02200f4987f34f59872db052f444a981] zshop - ctx.response.status=200
+[2022-05-07T20:14:28.225] [INFO] [ba5c1b7f282847739e0df18212a014ed] zshop - Process GET /static/js/lib/jquery.js...
+[2022-05-07T20:14:28.226] [INFO] [b52368cdf46b44bab53e2a8d0c048fe8] zshop - Process GET /static/js/app/public-tip.js...
+[2022-05-07T20:14:28.226] [INFO] [22d9895f9a6b4f2b821de6445bb538ee] zshop - Process GET /static/js/lib/swiper-4.1.6.min.js...
+[2022-05-07T20:14:28.227] [INFO] [22d9895f9a6b4f2b821de6445bb538ee] zshop - ctx.response.status=200
+[2022-05-07T20:14:28.227] [INFO] [22d9895f9a6b4f2b821de6445bb538ee] zshop - ctx.response.status=200
+[2022-05-07T20:14:28.235] [INFO] [22d9895f9a6b4f2b821de6445bb538ee] zshop - ctx.response.status=200
+[2022-05-07T20:14:28.242] [INFO] [087085d9497749e48b5f1babac1df00e] zshop - Process GET /static/images/icon-back.png...
+[2022-05-07T20:14:28.253] [INFO] [e21d92a3219441ba8b67ce6575c85140] zshop - Process GET /static/images/index_bak.png...
+[2022-05-07T20:14:28.255] [INFO] [b14a04f63eb242609af0d8bf176a7126] zshop - Process GET /static/images/xuanze.png...
+[2022-05-07T20:14:28.268] [INFO] [c7def7dbec46472ab27d74766276d8c6] zshop - Process GET /static/images/footer03.png...
+[2022-05-07T20:14:28.274] [INFO] [c7def7dbec46472ab27d74766276d8c6] zshop - ctx.response.status=200
+[2022-05-07T20:14:28.275] [INFO] [c7def7dbec46472ab27d74766276d8c6] zshop - ctx.response.status=200
+[2022-05-07T20:14:28.276] [INFO] [597050ba719147fa8aa434e389c17ffe] zshop - Process GET /static/images/icon-collection.png...
+[2022-05-07T20:14:28.285] [INFO] [3a1e5143760045c4b99895ae7f243a45] zshop - Process GET /static/images/icon-kefu.png...
+[2022-05-07T20:14:28.285] [INFO] [3a1e5143760045c4b99895ae7f243a45] zshop - ctx.response.status=200
+[2022-05-07T20:14:28.286] [INFO] [3a1e5143760045c4b99895ae7f243a45] zshop - ctx.response.status=200
+[2022-05-07T20:14:28.287] [INFO] [3a1e5143760045c4b99895ae7f243a45] zshop - ctx.response.status=200
+[2022-05-07T20:14:28.288] [INFO] [3a1e5143760045c4b99895ae7f243a45] zshop - ctx.response.status=200
+[2022-05-07T20:14:28.396] [INFO] [e2e2e30c5e054d53bca11dd2f1291aad] zshop - Process GET /static/js/lib/jquery.Spinner.js...
+[2022-05-07T20:14:28.397] [INFO] [e2e2e30c5e054d53bca11dd2f1291aad] zshop - ctx.response.status=200
+[2022-05-07T20:14:28.461] [INFO] [103cf09c00ca48fb94009b6e58b4b8ac] zshop - Process GET /static/images/BuynBtn.png...
+[2022-05-07T20:14:28.462] [INFO] [103cf09c00ca48fb94009b6e58b4b8ac] zshop - ctx.response.status=200
+[2022-05-07T20:14:31.440] [INFO] [8a57a78011a6450c85002620fb275a92] zshop - Process GET /zshop/prodDetail/2...
+[2022-05-07T20:14:31.442] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `groupId`, `name`, `description`, `price`, `image`, `recommend`, `sales`, `stock`, `detailImages`, `detailHtml`, `createdAt`, `updatedAt`, `version` FROM `product` AS `product` WHERE `product`.`id` = 2;
+[2022-05-07T20:14:31.445] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `prodGroup`, `attriId`, `attriName`, `createdAt`, `updatedAt`, `version` FROM `group_attri` AS `group_attri` WHERE `group_attri`.`prodGroup` = 2;
+[2022-05-07T20:14:31.458] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT t.attriId, t.attriName, t1.attriValue, t2.prodId FROM group_attri t LEFT JOIN group_attri_value t1 ON t.id = t1.groupAttriId LEFT JOIN prod_attri t2 ON t1.id = t2.groupAttriValueId WHERE t.prodGroup = 2
+[2022-05-07T20:14:31.470] [INFO] [8a57a78011a6450c85002620fb275a92] zshop - ctx.response.status=200
+[2022-05-07T20:14:31.487] [INFO] [2c732e76539b4045a9a4897f6687a99d] zshop - Process GET /static/css/weui.min.css...
+[2022-05-07T20:14:31.493] [INFO] [bb33a834439e4153aff26591f98d421b] zshop - Process GET /static/css/style.css...
+[2022-05-07T20:14:31.493] [INFO] [40ef79f2be564c9b96bbff556c889cae] zshop - Process GET /static/css/swiper-4.1.6.min.css...
+[2022-05-07T20:14:31.493] [INFO] [3d41c5f725a8421cacf6125a83f61861] zshop - Process GET /static/js/lib/require.js...
+[2022-05-07T20:14:31.494] [INFO] [ad85df899131414bb999b273ae072c63] zshop - Process GET /static/images/product/detail/prod_detail4.jpg...
+[2022-05-07T20:14:31.495] [INFO] [358dadf7aadb4b75a72753da2c9fcfa6] zshop - Process GET /static/images/product/detail/prod_detail5.jpg...
+[2022-05-07T20:14:31.495] [INFO] [358dadf7aadb4b75a72753da2c9fcfa6] zshop - ctx.response.status=200
+[2022-05-07T20:14:31.496] [INFO] [358dadf7aadb4b75a72753da2c9fcfa6] zshop - ctx.response.status=200
+[2022-05-07T20:14:31.496] [INFO] [358dadf7aadb4b75a72753da2c9fcfa6] zshop - ctx.response.status=200
+[2022-05-07T20:14:31.497] [INFO] [358dadf7aadb4b75a72753da2c9fcfa6] zshop - ctx.response.status=200
+[2022-05-07T20:14:31.506] [INFO] [358dadf7aadb4b75a72753da2c9fcfa6] zshop - ctx.response.status=200
+[2022-05-07T20:14:31.513] [INFO] [358dadf7aadb4b75a72753da2c9fcfa6] zshop - ctx.response.status=200
+[2022-05-07T20:14:31.514] [INFO] [1545cb6315924ef9b318dda2dd6e442f] zshop - Process GET /static/images/product/detail/prod_detail6.jpg...
+[2022-05-07T20:14:31.516] [INFO] [1545cb6315924ef9b318dda2dd6e442f] zshop - ctx.response.status=200
+[2022-05-07T20:14:31.517] [INFO] [a7d06c67b595495ebe9076e7daa58782] zshop - Process GET /static/images/product/detail/prod_detail7.jpg...
+[2022-05-07T20:14:31.518] [INFO] [a7d06c67b595495ebe9076e7daa58782] zshop - ctx.response.status=200
+[2022-05-07T20:14:31.531] [INFO] [ad14b49e7e8e49faa3f9abea3283c6db] zshop - Process GET /static/js/app/prod-detail.js...
+[2022-05-07T20:14:31.532] [INFO] [ad14b49e7e8e49faa3f9abea3283c6db] zshop - ctx.response.status=200
+[2022-05-07T20:14:31.552] [INFO] [6f64975c9ad34a60bdfc957b4fb30ed8] zshop - Process GET /static/js/lib/jquery.js...
+[2022-05-07T20:14:31.553] [INFO] [f1ea2916774e4cb1a62d3bd96d921855] zshop - Process GET /static/js/app/public-tip.js...
+[2022-05-07T20:14:31.553] [INFO] [57e6742831924be2b07e17ae3130de79] zshop - Process GET /static/js/lib/swiper-4.1.6.min.js...
+[2022-05-07T20:14:31.554] [INFO] [57e6742831924be2b07e17ae3130de79] zshop - ctx.response.status=200
+[2022-05-07T20:14:31.560] [INFO] [57e6742831924be2b07e17ae3130de79] zshop - ctx.response.status=200
+[2022-05-07T20:14:31.561] [INFO] [57e6742831924be2b07e17ae3130de79] zshop - ctx.response.status=200
+[2022-05-07T20:14:31.567] [INFO] [3be9622bb2c349c2b9e4c10e01629a8e] zshop - Process GET /static/images/icon-back.png...
+[2022-05-07T20:14:31.574] [INFO] [889f19c9faa44cd890d2032e5b980cd6] zshop - Process GET /static/images/index_bak.png...
+[2022-05-07T20:14:31.575] [INFO] [617904a4238d4bdda16a122f66f62c91] zshop - Process GET /static/images/icon-kefu.png...
+[2022-05-07T20:14:31.576] [INFO] [a39f4e02c3ab4781ad363a2d78bab767] zshop - Process GET /static/images/icon-collection.png...
+[2022-05-07T20:14:31.576] [INFO] [a39f4e02c3ab4781ad363a2d78bab767] zshop - ctx.response.status=200
+[2022-05-07T20:14:31.577] [INFO] [a39f4e02c3ab4781ad363a2d78bab767] zshop - ctx.response.status=200
+[2022-05-07T20:14:31.577] [INFO] [a39f4e02c3ab4781ad363a2d78bab767] zshop - ctx.response.status=200
+[2022-05-07T20:14:31.578] [INFO] [79e81101427e4e61ae496be0a3466476] zshop - Process GET /static/images/footer03.png...
+[2022-05-07T20:14:31.579] [INFO] [79e81101427e4e61ae496be0a3466476] zshop - ctx.response.status=200
+[2022-05-07T20:14:31.579] [INFO] [79e81101427e4e61ae496be0a3466476] zshop - ctx.response.status=200
+[2022-05-07T20:14:31.717] [INFO] [9cb9ba18d7324643b12c6c625dbd5caa] zshop - Process GET /static/js/lib/jquery.Spinner.js...
+[2022-05-07T20:14:31.718] [INFO] [9cb9ba18d7324643b12c6c625dbd5caa] zshop - ctx.response.status=200
+[2022-05-07T20:14:31.766] [INFO] [5b9de52a2e964e50a41138548a76ffd9] zshop - Process GET /static/images/BuynBtn.png...
+[2022-05-07T20:14:31.767] [INFO] [5b9de52a2e964e50a41138548a76ffd9] zshop - ctx.response.status=200
+[2022-05-07T20:14:36.103] [INFO] [c36bf400d0754b8e97df4c005b0b136b] zshop - Process GET /zshop/prodDetail/2...
+[2022-05-07T20:14:36.105] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `groupId`, `name`, `description`, `price`, `image`, `recommend`, `sales`, `stock`, `detailImages`, `detailHtml`, `createdAt`, `updatedAt`, `version` FROM `product` AS `product` WHERE `product`.`id` = 2;
+[2022-05-07T20:14:36.115] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `prodGroup`, `attriId`, `attriName`, `createdAt`, `updatedAt`, `version` FROM `group_attri` AS `group_attri` WHERE `group_attri`.`prodGroup` = 2;
+[2022-05-07T20:14:36.117] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT t.attriId, t.attriName, t1.attriValue, t2.prodId FROM group_attri t LEFT JOIN group_attri_value t1 ON t.id = t1.groupAttriId LEFT JOIN prod_attri t2 ON t1.id = t2.groupAttriValueId WHERE t.prodGroup = 2
+[2022-05-07T20:14:36.130] [INFO] [c36bf400d0754b8e97df4c005b0b136b] zshop - ctx.response.status=200
+[2022-05-07T20:14:36.145] [INFO] [aa7042164bac4afa9f580fbd78b73a90] zshop - Process GET /static/css/weui.min.css...
+[2022-05-07T20:14:36.152] [INFO] [19de766e447a425f9dd46a77fd871728] zshop - Process GET /static/css/style.css...
+[2022-05-07T20:14:36.153] [INFO] [658895d2251849eaaea03974638c937c] zshop - Process GET /static/css/swiper-4.1.6.min.css...
+[2022-05-07T20:14:36.153] [INFO] [ba7a024c2d644ce0a41a2fa49f13b264] zshop - Process GET /static/js/lib/require.js...
+[2022-05-07T20:14:36.154] [INFO] [6561ff85c97243a39f3ea14efe5b776f] zshop - Process GET /static/images/product/detail/prod_detail4.jpg...
+[2022-05-07T20:14:36.155] [INFO] [0b4a9a1955c247eb97243523b631bb59] zshop - Process GET /static/images/product/detail/prod_detail5.jpg...
+[2022-05-07T20:14:36.155] [INFO] [0b4a9a1955c247eb97243523b631bb59] zshop - ctx.response.status=200
+[2022-05-07T20:14:36.156] [INFO] [0b4a9a1955c247eb97243523b631bb59] zshop - ctx.response.status=200
+[2022-05-07T20:14:36.156] [INFO] [0b4a9a1955c247eb97243523b631bb59] zshop - ctx.response.status=200
+[2022-05-07T20:14:36.157] [INFO] [0b4a9a1955c247eb97243523b631bb59] zshop - ctx.response.status=200
+[2022-05-07T20:14:36.170] [INFO] [0b4a9a1955c247eb97243523b631bb59] zshop - ctx.response.status=200
+[2022-05-07T20:14:36.171] [INFO] [0b4a9a1955c247eb97243523b631bb59] zshop - ctx.response.status=200
+[2022-05-07T20:14:36.172] [INFO] [de0acc432cd8434aa5448ab28c5f59e3] zshop - Process GET /static/images/product/detail/prod_detail6.jpg...
+[2022-05-07T20:14:36.179] [INFO] [4a5c33f606424e728579e9a8a0dfe6a9] zshop - Process GET /static/images/product/detail/prod_detail7.jpg...
+[2022-05-07T20:14:36.180] [INFO] [4a5c33f606424e728579e9a8a0dfe6a9] zshop - ctx.response.status=200
+[2022-05-07T20:14:36.181] [INFO] [4a5c33f606424e728579e9a8a0dfe6a9] zshop - ctx.response.status=200
+[2022-05-07T20:14:36.197] [INFO] [2515ed231cda4562bc2542a9fde533bf] zshop - Process GET /static/js/app/prod-detail.js...
+[2022-05-07T20:14:36.198] [INFO] [2515ed231cda4562bc2542a9fde533bf] zshop - ctx.response.status=200
+[2022-05-07T20:14:36.216] [INFO] [5025065fbfd54aeb95b499cf0b138246] zshop - Process GET /static/js/lib/jquery.js...
+[2022-05-07T20:14:36.217] [INFO] [f7ea972484e44f8c8111b5200773212e] zshop - Process GET /static/js/app/public-tip.js...
+[2022-05-07T20:14:36.217] [INFO] [eabe36fde48546eba1e06ad9ca1fb228] zshop - Process GET /static/js/lib/swiper-4.1.6.min.js...
+[2022-05-07T20:14:36.218] [INFO] [eabe36fde48546eba1e06ad9ca1fb228] zshop - ctx.response.status=200
+[2022-05-07T20:14:36.218] [INFO] [eabe36fde48546eba1e06ad9ca1fb228] zshop - ctx.response.status=200
+[2022-05-07T20:14:36.219] [INFO] [eabe36fde48546eba1e06ad9ca1fb228] zshop - ctx.response.status=200
+[2022-05-07T20:14:36.229] [INFO] [1e22954157bb40669a0459534e44559c] zshop - Process GET /static/images/icon-back.png...
+[2022-05-07T20:14:36.230] [INFO] [b8d79c9460434510acfe847dcc0ada0b] zshop - Process GET /static/images/index_bak.png...
+[2022-05-07T20:14:36.230] [INFO] [23a73030d4874e86a422a77cf3244875] zshop - Process GET /static/images/icon-kefu.png...
+[2022-05-07T20:14:36.231] [INFO] [5ae01f6203d4421a931dd910d615838b] zshop - Process GET /static/images/icon-collection.png...
+[2022-05-07T20:14:36.231] [INFO] [5ae01f6203d4421a931dd910d615838b] zshop - ctx.response.status=200
+[2022-05-07T20:14:36.232] [INFO] [5ae01f6203d4421a931dd910d615838b] zshop - ctx.response.status=200
+[2022-05-07T20:14:36.233] [INFO] [5ae01f6203d4421a931dd910d615838b] zshop - ctx.response.status=200
+[2022-05-07T20:14:36.233] [INFO] [f9646824f38149c49cf65d0aa35b745f] zshop - Process GET /static/images/footer03.png...
+[2022-05-07T20:14:36.234] [INFO] [f9646824f38149c49cf65d0aa35b745f] zshop - ctx.response.status=200
+[2022-05-07T20:14:36.234] [INFO] [f9646824f38149c49cf65d0aa35b745f] zshop - ctx.response.status=200
+[2022-05-07T20:14:36.372] [INFO] [5a073f3ef24749389404c026eeb4f9b7] zshop - Process GET /static/js/lib/jquery.Spinner.js...
+[2022-05-07T20:14:36.373] [INFO] [5a073f3ef24749389404c026eeb4f9b7] zshop - ctx.response.status=200
+[2022-05-07T20:14:36.421] [INFO] [d6af364aa90f497da2c6939be5b3143c] zshop - Process GET /static/images/BuynBtn.png...
+[2022-05-07T20:14:36.422] [INFO] [d6af364aa90f497da2c6939be5b3143c] zshop - ctx.response.status=200
+[2022-05-07T20:14:41.383] [INFO] [102ef2a3597e4d9a8d460e339a0a62ac] zshop - Process GET /zshop/prodDetail/2...
+[2022-05-07T20:14:41.384] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `groupId`, `name`, `description`, `price`, `image`, `recommend`, `sales`, `stock`, `detailImages`, `detailHtml`, `createdAt`, `updatedAt`, `version` FROM `product` AS `product` WHERE `product`.`id` = 2;
+[2022-05-07T20:14:41.386] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `prodGroup`, `attriId`, `attriName`, `createdAt`, `updatedAt`, `version` FROM `group_attri` AS `group_attri` WHERE `group_attri`.`prodGroup` = 2;
+[2022-05-07T20:14:41.395] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT t.attriId, t.attriName, t1.attriValue, t2.prodId FROM group_attri t LEFT JOIN group_attri_value t1 ON t.id = t1.groupAttriId LEFT JOIN prod_attri t2 ON t1.id = t2.groupAttriValueId WHERE t.prodGroup = 2
+[2022-05-07T20:14:41.400] [INFO] [102ef2a3597e4d9a8d460e339a0a62ac] zshop - ctx.response.status=200
+[2022-05-07T20:14:41.422] [INFO] [e1aa9ed23bb74e429975bc96f7f000a6] zshop - Process GET /static/css/weui.min.css...
+[2022-05-07T20:14:41.422] [INFO] [7731e94099f24e898b638f361aee007d] zshop - Process GET /static/css/style.css...
+[2022-05-07T20:14:41.423] [INFO] [98c3602fe930467ba30da45582c4614d] zshop - Process GET /static/css/swiper-4.1.6.min.css...
+[2022-05-07T20:14:41.424] [INFO] [5a684a384f6d40c8b5f4ac32595863a0] zshop - Process GET /static/js/lib/require.js...
+[2022-05-07T20:14:41.425] [INFO] [e0ceee1993994508a065c17089552d1f] zshop - Process GET /static/images/product/detail/prod_detail4.jpg...
+[2022-05-07T20:14:41.425] [INFO] [1cdbb1217d9e47c39f51b929351509fd] zshop - Process GET /static/images/product/detail/prod_detail5.jpg...
+[2022-05-07T20:14:41.426] [INFO] [1cdbb1217d9e47c39f51b929351509fd] zshop - ctx.response.status=200
+[2022-05-07T20:14:41.426] [INFO] [1cdbb1217d9e47c39f51b929351509fd] zshop - ctx.response.status=200
+[2022-05-07T20:14:41.426] [INFO] [1cdbb1217d9e47c39f51b929351509fd] zshop - ctx.response.status=200
+[2022-05-07T20:14:41.427] [INFO] [1cdbb1217d9e47c39f51b929351509fd] zshop - ctx.response.status=200
+[2022-05-07T20:14:41.439] [INFO] [1cdbb1217d9e47c39f51b929351509fd] zshop - ctx.response.status=200
+[2022-05-07T20:14:41.440] [INFO] [1cdbb1217d9e47c39f51b929351509fd] zshop - ctx.response.status=200
+[2022-05-07T20:14:41.441] [INFO] [d187c42867534117b126be5677881589] zshop - Process GET /static/images/product/detail/prod_detail6.jpg...
+[2022-05-07T20:14:41.442] [INFO] [d187c42867534117b126be5677881589] zshop - ctx.response.status=200
+[2022-05-07T20:14:41.445] [INFO] [f25de27356994fe39c6c7918a58c8492] zshop - Process GET /static/images/product/detail/prod_detail7.jpg...
+[2022-05-07T20:14:41.453] [INFO] [f25de27356994fe39c6c7918a58c8492] zshop - ctx.response.status=200
+[2022-05-07T20:14:41.465] [INFO] [fa212f0de0724a0c97b2e51e1143b14a] zshop - Process GET /static/js/app/prod-detail.js...
+[2022-05-07T20:14:41.466] [INFO] [fa212f0de0724a0c97b2e51e1143b14a] zshop - ctx.response.status=200
+[2022-05-07T20:14:41.487] [INFO] [58fa0213677943848b0cfa87ae6f25ce] zshop - Process GET /static/js/lib/jquery.js...
+[2022-05-07T20:14:41.491] [INFO] [9d89d22335664c328d371680d6d2059c] zshop - Process GET /static/js/app/public-tip.js...
+[2022-05-07T20:14:41.492] [INFO] [24ba0e0680ab433b8c2711a643eb9638] zshop - Process GET /static/js/lib/swiper-4.1.6.min.js...
+[2022-05-07T20:14:41.492] [INFO] [24ba0e0680ab433b8c2711a643eb9638] zshop - ctx.response.status=200
+[2022-05-07T20:14:41.493] [INFO] [24ba0e0680ab433b8c2711a643eb9638] zshop - ctx.response.status=200
+[2022-05-07T20:14:41.494] [INFO] [24ba0e0680ab433b8c2711a643eb9638] zshop - ctx.response.status=200
+[2022-05-07T20:14:41.496] [INFO] [bd012a163d304b459a37e8beb50d543d] zshop - Process GET /static/images/icon-back.png...
+[2022-05-07T20:14:41.497] [INFO] [b0e36f90021740749f81f9c8d2bcab92] zshop - Process GET /static/images/index_bak.png...
+[2022-05-07T20:14:41.497] [INFO] [68b1da56b9fc4c0fa9c6bd78a2971427] zshop - Process GET /static/images/icon-kefu.png...
+[2022-05-07T20:14:41.498] [INFO] [68b1da56b9fc4c0fa9c6bd78a2971427] zshop - ctx.response.status=200
+[2022-05-07T20:14:41.498] [INFO] [68b1da56b9fc4c0fa9c6bd78a2971427] zshop - ctx.response.status=200
+[2022-05-07T20:14:41.506] [INFO] [68b1da56b9fc4c0fa9c6bd78a2971427] zshop - ctx.response.status=200
+[2022-05-07T20:14:41.518] [INFO] [9d40fa95e58344fabc0a5a076b7143e4] zshop - Process GET /static/images/icon-collection.png...
+[2022-05-07T20:14:41.519] [INFO] [2999c6429b524b138cc9f9dc04d4f7c2] zshop - Process GET /static/images/footer03.png...
+[2022-05-07T20:14:41.520] [INFO] [2999c6429b524b138cc9f9dc04d4f7c2] zshop - ctx.response.status=200
+[2022-05-07T20:14:41.526] [INFO] [2999c6429b524b138cc9f9dc04d4f7c2] zshop - ctx.response.status=200
+[2022-05-07T20:14:41.647] [INFO] [17de25a051ec4de7a7b42daa8f884d0f] zshop - Process GET /static/js/lib/jquery.Spinner.js...
+[2022-05-07T20:14:41.648] [INFO] [17de25a051ec4de7a7b42daa8f884d0f] zshop - ctx.response.status=200
+[2022-05-07T20:14:41.706] [INFO] [3fc36a2fb4f84dc98b210702c17b058d] zshop - Process GET /static/images/BuynBtn.png...
+[2022-05-07T20:14:41.707] [INFO] [3fc36a2fb4f84dc98b210702c17b058d] zshop - ctx.response.status=200
+[2022-05-07T20:14:42.577] [INFO] [2cdf8d3457fe45bfa2c806091754d91d] zshop - Process POST /zshop/userapi/addCartProd...
+[2022-05-07T20:14:42.592] [INFO] [2cdf8d3457fe45bfa2c806091754d91d] zshop - Process API POST /zshop/userapi/addCartProd...
+[2022-05-07T20:14:42.593] [INFO] [2cdf8d3457fe45bfa2c806091754d91d] zshop - ctx.response.status=400
+[2022-05-07T20:14:42.598] [INFO] [43dc4b29987f439ba33b988dc85abbfb] zshop - Process GET /zshop/login?loginSuccUrl=/zshop/prodDetail/2...
+[2022-05-07T20:14:42.609] [INFO] [43dc4b29987f439ba33b988dc85abbfb] zshop - ctx.response.status=200
+[2022-05-07T20:14:42.621] [INFO] [f12f92ca5db14f3aa8dc63e267b5c69e] zshop - Process GET /static/css/weui.min.css...
+[2022-05-07T20:14:42.621] [INFO] [a63352dd22b44c85aef9d6b9b76a009f] zshop - Process GET /static/css/style.css...
+[2022-05-07T20:14:42.622] [INFO] [a155dddd0c0644fc9e83fb2f1a1a2026] zshop - Process GET /static/js/lib/require.js...
+[2022-05-07T20:14:42.622] [INFO] [a8bce23edf1f489e944fc47e6833eea3] zshop - Process GET /static/images/vcode.jpg...
+[2022-05-07T20:14:42.623] [INFO] [a8bce23edf1f489e944fc47e6833eea3] zshop - ctx.response.status=200
+[2022-05-07T20:14:42.623] [INFO] [a8bce23edf1f489e944fc47e6833eea3] zshop - ctx.response.status=200
+[2022-05-07T20:14:42.638] [INFO] [a8bce23edf1f489e944fc47e6833eea3] zshop - ctx.response.status=200
+[2022-05-07T20:14:42.638] [INFO] [a8bce23edf1f489e944fc47e6833eea3] zshop - ctx.response.status=200
+[2022-05-07T20:14:42.675] [INFO] [4d62fdb421ec4c1b8fe1121e5320bcc8] zshop - Process GET /static/js/app/login.js...
+[2022-05-07T20:14:42.676] [INFO] [4d62fdb421ec4c1b8fe1121e5320bcc8] zshop - ctx.response.status=200
+[2022-05-07T20:14:42.688] [INFO] [81c33f342ce44880af2d70d9a5fc1ded] zshop - Process GET /static/js/lib/jquery.js...
+[2022-05-07T20:14:42.690] [INFO] [142277a13ffb4bf8b8861e53978df196] zshop - Process GET /static/js/app/public-tip.js...
+[2022-05-07T20:14:42.690] [INFO] [142277a13ffb4bf8b8861e53978df196] zshop - ctx.response.status=200
+[2022-05-07T20:14:42.691] [INFO] [142277a13ffb4bf8b8861e53978df196] zshop - ctx.response.status=200
+[2022-05-07T20:14:42.711] [INFO] [2850f982ea9f4cfdbc023fef06dacaef] zshop - Process GET /static/images/icon-back.png...
+[2022-05-07T20:14:42.712] [INFO] [51d6e109217c47b4af1ca7588e964c87] zshop - Process GET /static/images/index_bak.png...
+[2022-05-07T20:14:42.712] [INFO] [51d6e109217c47b4af1ca7588e964c87] zshop - ctx.response.status=200
+[2022-05-07T20:14:42.713] [INFO] [51d6e109217c47b4af1ca7588e964c87] zshop - ctx.response.status=200
+[2022-05-07T20:14:50.042] [INFO] [e35ae61fbea24481b3f250e1665e0ec7] zshop - Process POST /zshop/userapi/buyNow...
+[2022-05-07T20:14:50.043] [INFO] [e35ae61fbea24481b3f250e1665e0ec7] zshop - Process API POST /zshop/userapi/buyNow...
+[2022-05-07T20:14:50.044] [INFO] [e35ae61fbea24481b3f250e1665e0ec7] zshop - ctx.response.status=400
+[2022-05-07T20:14:50.050] [INFO] [fe7a00175ff94fbfa4fe049837318af2] zshop - Process GET /zshop/login?loginSuccUrl=/zshop/prodDetail/1...
+[2022-05-07T20:14:50.056] [INFO] [fe7a00175ff94fbfa4fe049837318af2] zshop - ctx.response.status=200
+[2022-05-07T20:14:50.072] [INFO] [2507ec525d884e26bd5cb765b082500b] zshop - Process GET /static/css/weui.min.css...
+[2022-05-07T20:14:50.075] [INFO] [8a09fffbcc134d4eab6bd8e539ab4e8b] zshop - Process GET /static/css/style.css...
+[2022-05-07T20:14:50.082] [INFO] [a4158c6fdb4441639050cfa150ce7a56] zshop - Process GET /static/js/lib/require.js...
+[2022-05-07T20:14:50.083] [INFO] [f0fe25ae5de94ceaa1067721027cc4ff] zshop - Process GET /static/images/vcode.jpg...
+[2022-05-07T20:14:50.084] [INFO] [f0fe25ae5de94ceaa1067721027cc4ff] zshop - ctx.response.status=200
+[2022-05-07T20:14:50.084] [INFO] [f0fe25ae5de94ceaa1067721027cc4ff] zshop - ctx.response.status=200
+[2022-05-07T20:14:50.084] [INFO] [f0fe25ae5de94ceaa1067721027cc4ff] zshop - ctx.response.status=200
+[2022-05-07T20:14:50.085] [INFO] [f0fe25ae5de94ceaa1067721027cc4ff] zshop - ctx.response.status=200
+[2022-05-07T20:14:50.119] [INFO] [7eb68489327d47bdacb2f5b9aa461551] zshop - Process GET /static/js/app/login.js...
+[2022-05-07T20:14:50.120] [INFO] [7eb68489327d47bdacb2f5b9aa461551] zshop - ctx.response.status=200
+[2022-05-07T20:14:50.134] [INFO] [727f8a1f49454f7683b90783028a33e5] zshop - Process GET /static/js/lib/jquery.js...
+[2022-05-07T20:14:50.135] [INFO] [8747969103ec47cc8de3eeaba24b2f75] zshop - Process GET /static/js/app/public-tip.js...
+[2022-05-07T20:14:50.136] [INFO] [8747969103ec47cc8de3eeaba24b2f75] zshop - ctx.response.status=200
+[2022-05-07T20:14:50.136] [INFO] [8747969103ec47cc8de3eeaba24b2f75] zshop - ctx.response.status=200
+[2022-05-07T20:14:50.155] [INFO] [a5fcab7438c34ef98611fded526d8c4d] zshop - Process GET /static/images/icon-back.png...
+[2022-05-07T20:14:50.157] [INFO] [f74e67f7572b449d9f7b052c6ea74937] zshop - Process GET /static/images/index_bak.png...
+[2022-05-07T20:14:50.158] [INFO] [f74e67f7572b449d9f7b052c6ea74937] zshop - ctx.response.status=200
+[2022-05-07T20:14:50.158] [INFO] [f74e67f7572b449d9f7b052c6ea74937] zshop - ctx.response.status=200
+[2022-05-07T20:14:53.608] [INFO] [6b9f818ba961453b8bde251c3fb02c0a] zshop - Process GET /zshop/prodDetail/1...
+[2022-05-07T20:14:53.615] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `groupId`, `name`, `description`, `price`, `image`, `recommend`, `sales`, `stock`, `detailImages`, `detailHtml`, `createdAt`, `updatedAt`, `version` FROM `product` AS `product` WHERE `product`.`id` = 1;
+[2022-05-07T20:14:53.622] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `prodGroup`, `attriId`, `attriName`, `createdAt`, `updatedAt`, `version` FROM `group_attri` AS `group_attri` WHERE `group_attri`.`prodGroup` = 1;
+[2022-05-07T20:14:53.625] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT t.attriId, t.attriName, t1.attriValue, t2.prodId FROM group_attri t LEFT JOIN group_attri_value t1 ON t.id = t1.groupAttriId LEFT JOIN prod_attri t2 ON t1.id = t2.groupAttriValueId WHERE t.prodGroup = 1
+[2022-05-07T20:14:53.647] [INFO] [6b9f818ba961453b8bde251c3fb02c0a] zshop - ctx.response.status=200
+[2022-05-07T20:14:53.672] [INFO] [465b652a90464be39c4d7264558504e7] zshop - Process GET /static/css/weui.min.css...
+[2022-05-07T20:14:53.673] [INFO] [763fd2081bd84493b6cfa73b194106f1] zshop - Process GET /static/css/style.css...
+[2022-05-07T20:14:53.673] [INFO] [b3789bebf0204317b7d255331c5c330d] zshop - Process GET /static/css/swiper-4.1.6.min.css...
+[2022-05-07T20:14:53.674] [INFO] [07dc48bf3b074f7bbcdbbfcdc62d2d92] zshop - Process GET /static/js/lib/require.js...
+[2022-05-07T20:14:53.675] [INFO] [664721d39b75495bb683764263cbd0ad] zshop - Process GET /static/images/product/detail/prod_detail0.jpg...
+[2022-05-07T20:14:53.675] [INFO] [f7bad9161bbd439d96822de1869b5fea] zshop - Process GET /static/images/product/detail/prod_detail1.jpg...
+[2022-05-07T20:14:53.676] [INFO] [f7bad9161bbd439d96822de1869b5fea] zshop - ctx.response.status=200
+[2022-05-07T20:14:53.677] [INFO] [f7bad9161bbd439d96822de1869b5fea] zshop - ctx.response.status=200
+[2022-05-07T20:14:53.677] [INFO] [f7bad9161bbd439d96822de1869b5fea] zshop - ctx.response.status=200
+[2022-05-07T20:14:53.678] [INFO] [f7bad9161bbd439d96822de1869b5fea] zshop - ctx.response.status=200
+[2022-05-07T20:14:53.678] [INFO] [f7bad9161bbd439d96822de1869b5fea] zshop - ctx.response.status=200
+[2022-05-07T20:14:53.680] [INFO] [238be9519be946f595397e97bf397716] zshop - Process GET /static/images/product/detail/prod_detail2.jpg...
+[2022-05-07T20:14:53.692] [INFO] [238be9519be946f595397e97bf397716] zshop - ctx.response.status=200
+[2022-05-07T20:14:53.693] [INFO] [a601b298f8f94fa4b6769e111d929659] zshop - Process GET /static/images/product/detail/prod_detail3.jpg...
+[2022-05-07T20:14:53.695] [INFO] [a601b298f8f94fa4b6769e111d929659] zshop - ctx.response.status=200
+[2022-05-07T20:14:53.696] [INFO] [a601b298f8f94fa4b6769e111d929659] zshop - ctx.response.status=200
+[2022-05-07T20:14:53.716] [INFO] [88f21ff7de604264a2ba8d744926a628] zshop - Process GET /static/js/app/prod-detail.js...
+[2022-05-07T20:14:53.721] [INFO] [88f21ff7de604264a2ba8d744926a628] zshop - ctx.response.status=200
+[2022-05-07T20:14:53.742] [INFO] [9f78d47e11ca4fb48b065f351114ec28] zshop - Process GET /static/js/lib/jquery.js...
+[2022-05-07T20:14:53.749] [INFO] [01efaddd37654943829863108be8874f] zshop - Process GET /static/js/app/public-tip.js...
+[2022-05-07T20:14:53.749] [INFO] [ea57236eccee457f845dc1f5b2cf22ad] zshop - Process GET /static/js/lib/swiper-4.1.6.min.js...
+[2022-05-07T20:14:53.750] [INFO] [ea57236eccee457f845dc1f5b2cf22ad] zshop - ctx.response.status=200
+[2022-05-07T20:14:53.750] [INFO] [ea57236eccee457f845dc1f5b2cf22ad] zshop - ctx.response.status=200
+[2022-05-07T20:14:53.751] [INFO] [ea57236eccee457f845dc1f5b2cf22ad] zshop - ctx.response.status=200
+[2022-05-07T20:14:53.755] [INFO] [ddca676af9194a3eac506b6c56dfc0df] zshop - Process GET /static/images/icon-back.png...
+[2022-05-07T20:14:53.763] [INFO] [acd92c98b0c0426183d10e52faac0df5] zshop - Process GET /static/images/index_bak.png...
+[2022-05-07T20:14:53.763] [INFO] [170c9f69739d440281223e2b97661423] zshop - Process GET /static/images/xuanze.png...
+[2022-05-07T20:14:53.764] [INFO] [9d7f46ba54ad47689ab97e51372b1645] zshop - Process GET /static/images/icon-collection.png...
+[2022-05-07T20:14:53.765] [INFO] [9d7f46ba54ad47689ab97e51372b1645] zshop - ctx.response.status=200
+[2022-05-07T20:14:53.766] [INFO] [9d7f46ba54ad47689ab97e51372b1645] zshop - ctx.response.status=200
+[2022-05-07T20:14:53.766] [INFO] [9d7f46ba54ad47689ab97e51372b1645] zshop - ctx.response.status=200
+[2022-05-07T20:14:53.767] [INFO] [10d5a1a2438c49fca37cef543f204b60] zshop - Process GET /static/images/footer03.png...
+[2022-05-07T20:14:53.767] [INFO] [52f0859d8e2948669dc14d11abec0090] zshop - Process GET /static/images/icon-kefu.png...
+[2022-05-07T20:14:53.768] [INFO] [52f0859d8e2948669dc14d11abec0090] zshop - ctx.response.status=200
+[2022-05-07T20:14:53.768] [INFO] [52f0859d8e2948669dc14d11abec0090] zshop - ctx.response.status=200
+[2022-05-07T20:14:53.768] [INFO] [52f0859d8e2948669dc14d11abec0090] zshop - ctx.response.status=200
+[2022-05-07T20:14:53.912] [INFO] [dc1010b40cde4848a85575508818817d] zshop - Process GET /static/js/lib/jquery.Spinner.js...
+[2022-05-07T20:14:53.913] [INFO] [dc1010b40cde4848a85575508818817d] zshop - ctx.response.status=200
+[2022-05-07T20:14:53.965] [INFO] [53062f125fb24bc4a93f1a4b73007dd7] zshop - Process GET /static/images/BuynBtn.png...
+[2022-05-07T20:14:53.966] [INFO] [53062f125fb24bc4a93f1a4b73007dd7] zshop - ctx.response.status=200
+[2022-05-07T20:14:55.497] [INFO] [356c9c6ac5d84a94bf7cfd7917cbc6ce] zshop - Process GET /zshop/prodDetail/7...
+[2022-05-07T20:14:55.499] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `groupId`, `name`, `description`, `price`, `image`, `recommend`, `sales`, `stock`, `detailImages`, `detailHtml`, `createdAt`, `updatedAt`, `version` FROM `product` AS `product` WHERE `product`.`id` = 7;
+[2022-05-07T20:14:55.501] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `prodGroup`, `attriId`, `attriName`, `createdAt`, `updatedAt`, `version` FROM `group_attri` AS `group_attri` WHERE `group_attri`.`prodGroup` = 1;
+[2022-05-07T20:14:55.508] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT t.attriId, t.attriName, t1.attriValue, t2.prodId FROM group_attri t LEFT JOIN group_attri_value t1 ON t.id = t1.groupAttriId LEFT JOIN prod_attri t2 ON t1.id = t2.groupAttriValueId WHERE t.prodGroup = 1
+[2022-05-07T20:14:55.512] [INFO] [356c9c6ac5d84a94bf7cfd7917cbc6ce] zshop - ctx.response.status=200
+[2022-05-07T20:14:55.532] [INFO] [a00a3cb650f642698978171bf6698df9] zshop - Process GET /static/css/weui.min.css...
+[2022-05-07T20:14:55.532] [INFO] [df4bbb0211344493a8f692d1c90a0893] zshop - Process GET /static/css/style.css...
+[2022-05-07T20:14:55.533] [INFO] [443d4a8407714ead919ad29a79a0b668] zshop - Process GET /static/css/swiper-4.1.6.min.css...
+[2022-05-07T20:14:55.549] [INFO] [67ce0347062b4714b56cc3b83d1e14ce] zshop - Process GET /static/js/lib/require.js...
+[2022-05-07T20:14:55.549] [INFO] [1b172052c7e243619fec0c8867f41b15] zshop - Process GET /static/images/product/detail/prod_detail0.jpg...
+[2022-05-07T20:14:55.550] [INFO] [1518e6e0996f46f8998d2a161c73e64b] zshop - Process GET /static/images/product/detail/prod_detail1.jpg...
+[2022-05-07T20:14:55.550] [INFO] [1518e6e0996f46f8998d2a161c73e64b] zshop - ctx.response.status=200
+[2022-05-07T20:14:55.550] [INFO] [1518e6e0996f46f8998d2a161c73e64b] zshop - ctx.response.status=200
+[2022-05-07T20:14:55.551] [INFO] [1518e6e0996f46f8998d2a161c73e64b] zshop - ctx.response.status=200
+[2022-05-07T20:14:55.551] [INFO] [1518e6e0996f46f8998d2a161c73e64b] zshop - ctx.response.status=200
+[2022-05-07T20:14:55.551] [INFO] [1518e6e0996f46f8998d2a161c73e64b] zshop - ctx.response.status=200
+[2022-05-07T20:14:55.553] [INFO] [e89a19c2eab14ba2be641a4479547f0d] zshop - Process GET /static/images/product/detail/prod_detail2.jpg...
+[2022-05-07T20:14:55.560] [INFO] [e89a19c2eab14ba2be641a4479547f0d] zshop - ctx.response.status=200
+[2022-05-07T20:14:55.562] [INFO] [94351aed8f50470cbd8ec52dcceabdf6] zshop - Process GET /static/images/product/detail/prod_detail3.jpg...
+[2022-05-07T20:14:55.570] [INFO] [94351aed8f50470cbd8ec52dcceabdf6] zshop - ctx.response.status=200
+[2022-05-07T20:14:55.571] [INFO] [94351aed8f50470cbd8ec52dcceabdf6] zshop - ctx.response.status=200
+[2022-05-07T20:14:55.586] [INFO] [3fc784062cc34ba68845b2bf29d0d321] zshop - Process GET /static/js/app/prod-detail.js...
+[2022-05-07T20:14:55.587] [INFO] [3fc784062cc34ba68845b2bf29d0d321] zshop - ctx.response.status=200
+[2022-05-07T20:14:55.607] [INFO] [c25f42aeabac44e4be6dc76664f7a411] zshop - Process GET /static/js/lib/jquery.js...
+[2022-05-07T20:14:55.609] [INFO] [fa51e88fb240408692e1234252c0e444] zshop - Process GET /static/js/app/public-tip.js...
+[2022-05-07T20:14:55.610] [INFO] [ecde81a9ac9444879ad4d089e9371fde] zshop - Process GET /static/js/lib/swiper-4.1.6.min.js...
+[2022-05-07T20:14:55.611] [INFO] [ecde81a9ac9444879ad4d089e9371fde] zshop - ctx.response.status=200
+[2022-05-07T20:14:55.611] [INFO] [ecde81a9ac9444879ad4d089e9371fde] zshop - ctx.response.status=200
+[2022-05-07T20:14:55.612] [INFO] [ecde81a9ac9444879ad4d089e9371fde] zshop - ctx.response.status=200
+[2022-05-07T20:14:55.625] [INFO] [574791fed1e04847a98f3cc4b73e1c74] zshop - Process GET /static/images/icon-back.png...
+[2022-05-07T20:14:55.626] [INFO] [d7d4688704394b30bd774ef212695039] zshop - Process GET /static/images/index_bak.png...
+[2022-05-07T20:14:55.626] [INFO] [b357e49c41f14bc7b61a13beaf03423e] zshop - Process GET /static/images/xuanze.png...
+[2022-05-07T20:14:55.626] [INFO] [1af0f24e3f544ac8a9880290c3208ef2] zshop - Process GET /static/images/icon-kefu.png...
+[2022-05-07T20:14:55.627] [INFO] [1af0f24e3f544ac8a9880290c3208ef2] zshop - ctx.response.status=200
+[2022-05-07T20:14:55.627] [INFO] [1af0f24e3f544ac8a9880290c3208ef2] zshop - ctx.response.status=200
+[2022-05-07T20:14:55.628] [INFO] [1af0f24e3f544ac8a9880290c3208ef2] zshop - ctx.response.status=200
+[2022-05-07T20:14:55.629] [INFO] [dab8d17e5d304669b1115569916e254e] zshop - Process GET /static/images/icon-collection.png...
+[2022-05-07T20:14:55.629] [INFO] [5d04a36659304d188d3e899f5492b578] zshop - Process GET /static/images/footer03.png...
+[2022-05-07T20:14:55.629] [INFO] [5d04a36659304d188d3e899f5492b578] zshop - ctx.response.status=200
+[2022-05-07T20:14:55.630] [INFO] [5d04a36659304d188d3e899f5492b578] zshop - ctx.response.status=200
+[2022-05-07T20:14:55.630] [INFO] [5d04a36659304d188d3e899f5492b578] zshop - ctx.response.status=200
+[2022-05-07T20:14:55.764] [INFO] [1c77c7a5875b4ea7b15b0c7a972ce7bf] zshop - Process GET /static/js/lib/jquery.Spinner.js...
+[2022-05-07T20:14:55.765] [INFO] [1c77c7a5875b4ea7b15b0c7a972ce7bf] zshop - ctx.response.status=200
+[2022-05-07T20:14:55.818] [INFO] [6cf7b57ab3754734b748032c351f8479] zshop - Process GET /static/images/BuynBtn.png...
+[2022-05-07T20:14:55.819] [INFO] [6cf7b57ab3754734b748032c351f8479] zshop - ctx.response.status=200
+[2022-05-07T20:15:00.979] [INFO] [e33edbdd1b504f8eb5f0b5ead59eefe1] zshop - Process GET /zshop/prodDetail/1...
+[2022-05-07T20:15:00.980] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `groupId`, `name`, `description`, `price`, `image`, `recommend`, `sales`, `stock`, `detailImages`, `detailHtml`, `createdAt`, `updatedAt`, `version` FROM `product` AS `product` WHERE `product`.`id` = 1;
+[2022-05-07T20:15:00.982] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `prodGroup`, `attriId`, `attriName`, `createdAt`, `updatedAt`, `version` FROM `group_attri` AS `group_attri` WHERE `group_attri`.`prodGroup` = 1;
+[2022-05-07T20:15:00.990] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT t.attriId, t.attriName, t1.attriValue, t2.prodId FROM group_attri t LEFT JOIN group_attri_value t1 ON t.id = t1.groupAttriId LEFT JOIN prod_attri t2 ON t1.id = t2.groupAttriValueId WHERE t.prodGroup = 1
+[2022-05-07T20:15:00.995] [INFO] [e33edbdd1b504f8eb5f0b5ead59eefe1] zshop - ctx.response.status=200
+[2022-05-07T20:15:01.025] [INFO] [c0a37d30bea24aa995517f6203196d39] zshop - Process GET /static/css/weui.min.css...
+[2022-05-07T20:15:01.025] [INFO] [de32531af9d046219ae058b738f05f8f] zshop - Process GET /static/css/style.css...
+[2022-05-07T20:15:01.026] [INFO] [ef1e0be5bede4f56ac051be8b90b6e60] zshop - Process GET /static/css/swiper-4.1.6.min.css...
+[2022-05-07T20:15:01.027] [INFO] [0cdfffba1c344128bc3854acadd9b02d] zshop - Process GET /static/js/lib/require.js...
+[2022-05-07T20:15:01.035] [INFO] [cd619009311d43eea698210093aa5ecf] zshop - Process GET /static/images/product/detail/prod_detail0.jpg...
+[2022-05-07T20:15:01.036] [INFO] [a64f713bf4f340589111c4f512d110fb] zshop - Process GET /static/images/product/detail/prod_detail1.jpg...
+[2022-05-07T20:15:01.036] [INFO] [a64f713bf4f340589111c4f512d110fb] zshop - ctx.response.status=200
+[2022-05-07T20:15:01.037] [INFO] [a64f713bf4f340589111c4f512d110fb] zshop - ctx.response.status=200
+[2022-05-07T20:15:01.037] [INFO] [a64f713bf4f340589111c4f512d110fb] zshop - ctx.response.status=200
+[2022-05-07T20:15:01.037] [INFO] [a64f713bf4f340589111c4f512d110fb] zshop - ctx.response.status=200
+[2022-05-07T20:15:01.038] [INFO] [a64f713bf4f340589111c4f512d110fb] zshop - ctx.response.status=200
+[2022-05-07T20:15:01.040] [INFO] [4bbf9fb3ca4b4219a4d0e4f151c9db99] zshop - Process GET /static/images/product/detail/prod_detail2.jpg...
+[2022-05-07T20:15:01.046] [INFO] [4bbf9fb3ca4b4219a4d0e4f151c9db99] zshop - ctx.response.status=200
+[2022-05-07T20:15:01.050] [INFO] [14498c3258594d22abc8008cfaa77696] zshop - Process GET /static/images/product/detail/prod_detail3.jpg...
+[2022-05-07T20:15:01.051] [INFO] [14498c3258594d22abc8008cfaa77696] zshop - ctx.response.status=200
+[2022-05-07T20:15:01.052] [INFO] [14498c3258594d22abc8008cfaa77696] zshop - ctx.response.status=200
+[2022-05-07T20:15:01.073] [INFO] [efe0daedba034e63946ee7606b972a6f] zshop - Process GET /static/js/app/prod-detail.js...
+[2022-05-07T20:15:01.074] [INFO] [efe0daedba034e63946ee7606b972a6f] zshop - ctx.response.status=200
+[2022-05-07T20:15:01.094] [INFO] [9f551ab7ec2f400abcaf5800e1aa4bcd] zshop - Process GET /static/js/lib/jquery.js...
+[2022-05-07T20:15:01.094] [INFO] [c1db38f5d40941ed917cd364d4ebac6b] zshop - Process GET /static/js/app/public-tip.js...
+[2022-05-07T20:15:01.095] [INFO] [8f4a1911e9b74e5aa825df09de19b3be] zshop - Process GET /static/js/lib/swiper-4.1.6.min.js...
+[2022-05-07T20:15:01.095] [INFO] [8f4a1911e9b74e5aa825df09de19b3be] zshop - ctx.response.status=200
+[2022-05-07T20:15:01.096] [INFO] [8f4a1911e9b74e5aa825df09de19b3be] zshop - ctx.response.status=200
+[2022-05-07T20:15:01.096] [INFO] [8f4a1911e9b74e5aa825df09de19b3be] zshop - ctx.response.status=200
+[2022-05-07T20:15:01.107] [INFO] [1fe1175a97314c8fbd1ac985ce08ace5] zshop - Process GET /static/images/icon-back.png...
+[2022-05-07T20:15:01.108] [INFO] [4691f926e8fc41759b7f3dc94f70e826] zshop - Process GET /static/images/index_bak.png...
+[2022-05-07T20:15:01.108] [INFO] [d7e751f487be434e96d1499abd9af994] zshop - Process GET /static/images/xuanze.png...
+[2022-05-07T20:15:01.108] [INFO] [af47977d2eef42289d29c11716816a45] zshop - Process GET /static/images/icon-kefu.png...
+[2022-05-07T20:15:01.109] [INFO] [af47977d2eef42289d29c11716816a45] zshop - ctx.response.status=200
+[2022-05-07T20:15:01.110] [INFO] [af47977d2eef42289d29c11716816a45] zshop - ctx.response.status=200
+[2022-05-07T20:15:01.115] [INFO] [af47977d2eef42289d29c11716816a45] zshop - ctx.response.status=200
+[2022-05-07T20:15:01.116] [INFO] [686f17e71503470f821c533c1e078039] zshop - Process GET /static/images/icon-collection.png...
+[2022-05-07T20:15:01.116] [INFO] [686f17e71503470f821c533c1e078039] zshop - ctx.response.status=200
+[2022-05-07T20:15:01.117] [INFO] [69d279676e964496ba511dd887e6a961] zshop - Process GET /static/images/footer03.png...
+[2022-05-07T20:15:01.118] [INFO] [69d279676e964496ba511dd887e6a961] zshop - ctx.response.status=200
+[2022-05-07T20:15:01.123] [INFO] [69d279676e964496ba511dd887e6a961] zshop - ctx.response.status=200
+[2022-05-07T20:15:01.254] [INFO] [d1f8da0da906437ba63e388d9879829f] zshop - Process GET /static/js/lib/jquery.Spinner.js...
+[2022-05-07T20:15:01.255] [INFO] [d1f8da0da906437ba63e388d9879829f] zshop - ctx.response.status=200
+[2022-05-07T20:15:01.304] [INFO] [6817c412b0aa473cb62ee025933428d8] zshop - Process GET /static/images/BuynBtn.png...
+[2022-05-07T20:15:01.306] [INFO] [6817c412b0aa473cb62ee025933428d8] zshop - ctx.response.status=200
+[2022-05-07T20:15:04.518] [INFO] [2b17f0c6887d4cdbb6fdd6423649961a] zshop - Process GET /static/js/app/index.js...
+[2022-05-07T20:15:04.519] [INFO] [2b17f0c6887d4cdbb6fdd6423649961a] zshop - ctx.response.status=200
+[2022-05-07T20:15:04.532] [INFO] [4c66aa1ec5f34756bd76d6a306a7e9c4] zshop - Process GET /static/js/lib/jquery.js...
+[2022-05-07T20:15:04.532] [INFO] [cc886b3f402d4ac1a16b9285e4cad4ae] zshop - Process GET /static/js/lib/vue.min.js...
+[2022-05-07T20:15:04.533] [INFO] [a6885872f5024f3abb96028d97970d29] zshop - Process GET /static/js/lib/vue-resource.min.js...
+[2022-05-07T20:15:04.533] [INFO] [13fce98b54ff4727818b8ae0d6ae6631] zshop - Process GET /static/js/app/public-tip.js...
+[2022-05-07T20:15:04.534] [INFO] [d830d57e961c44f19df320a73759d51e] zshop - Process GET /static/js/lib/swiper-4.1.6.min.js...
+[2022-05-07T20:15:04.538] [INFO] [ac583591cd63452e90941396101feed4] zshop - Process GET /static/js/app/public.js...
+[2022-05-07T20:15:04.539] [INFO] [ac583591cd63452e90941396101feed4] zshop - ctx.response.status=200
+[2022-05-07T20:15:04.539] [INFO] [ac583591cd63452e90941396101feed4] zshop - ctx.response.status=200
+[2022-05-07T20:15:04.539] [INFO] [ac583591cd63452e90941396101feed4] zshop - ctx.response.status=200
+[2022-05-07T20:15:04.540] [INFO] [ac583591cd63452e90941396101feed4] zshop - ctx.response.status=200
+[2022-05-07T20:15:04.540] [INFO] [ac583591cd63452e90941396101feed4] zshop - ctx.response.status=200
+[2022-05-07T20:15:04.540] [INFO] [ac583591cd63452e90941396101feed4] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.291] [INFO] [9112d9b0da0746188249ba09029dfcae] zshop - Process GET /zshop...
+[2022-05-07T20:15:06.291] [INFO] [9112d9b0da0746188249ba09029dfcae] zshop - ===index in===
+[2022-05-07T20:15:06.292] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `groupId`, `name`, `description`, `price`, `image`, `recommend`, `sales`, `stock`, `detailImages`, `detailHtml`, `createdAt`, `updatedAt`, `version` FROM `product` AS `product` WHERE `product`.`recommend` = 1;
+[2022-05-07T20:15:06.301] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `name`, `description`, `position`, `image`, `url`, `createdAt`, `updatedAt`, `version` FROM `advert` AS `advert` WHERE `advert`.`position` = 1;
+[2022-05-07T20:15:06.308] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `name`, `description`, `position`, `image`, `url`, `createdAt`, `updatedAt`, `version` FROM `advert` AS `advert` WHERE `advert`.`position` = 2;
+[2022-05-07T20:15:06.315] [INFO] [9112d9b0da0746188249ba09029dfcae] zshop - ===index mid===
+[2022-05-07T20:15:06.321] [INFO] [9112d9b0da0746188249ba09029dfcae] zshop - ===index out===
+[2022-05-07T20:15:06.324] [INFO] [9112d9b0da0746188249ba09029dfcae] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.355] [INFO] [e418af2a59eb4a45aa67a45a10562b3b] zshop - Process GET /static/css/weui.min.css...
+[2022-05-07T20:15:06.356] [INFO] [a37e2a0a4fab4a8a8ff56d99e1a7ad27] zshop - Process GET /static/css/style.css...
+[2022-05-07T20:15:06.357] [INFO] [df81ce6173de483db96ffcd9cf6e9c32] zshop - Process GET /static/css/swiper-4.1.6.min.css...
+[2022-05-07T20:15:06.358] [INFO] [df81ce6173de483db96ffcd9cf6e9c32] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.358] [INFO] [df81ce6173de483db96ffcd9cf6e9c32] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.359] [INFO] [df81ce6173de483db96ffcd9cf6e9c32] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.369] [INFO] [fdbec850fd2b4599ad27ebb02f937324] zshop - Process GET /static/js/lib/require.js...
+[2022-05-07T20:15:06.375] [INFO] [9e42a30cde084ed3aa4c68bcd46ed750] zshop - Process GET /static/images/vt/s1.png...
+[2022-05-07T20:15:06.376] [INFO] [eef2c2ea79f54d88a7591639a88871d5] zshop - Process GET /static/images/vt/s2.png...
+[2022-05-07T20:15:06.382] [INFO] [eef2c2ea79f54d88a7591639a88871d5] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.383] [INFO] [eef2c2ea79f54d88a7591639a88871d5] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.388] [INFO] [ac14f47dee80486f89de59f744aa3080] zshop - Process GET /static/images/vt/s3.png...
+[2022-05-07T20:15:06.394] [INFO] [ac14f47dee80486f89de59f744aa3080] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.395] [INFO] [9a1c55900f004333805f1cce35d7a029] zshop - Process GET /static/images/menu.png...
+[2022-05-07T20:15:06.395] [INFO] [9a1c55900f004333805f1cce35d7a029] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.400] [INFO] [a2cba9aef95d45728902d9b480666452] zshop - Process GET /static/images/vt/mid.png...
+[2022-05-07T20:15:06.401] [INFO] [0eb4a4c0e217461387f767a18c13a155] zshop - Process GET /static/images/product/good1.jpg...
+[2022-05-07T20:15:06.401] [INFO] [0eb4a4c0e217461387f767a18c13a155] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.402] [INFO] [1432b01bf8fe434396e45f8d647907eb] zshop - Process GET /static/images/product/good2.jpg...
+[2022-05-07T20:15:06.402] [INFO] [1432b01bf8fe434396e45f8d647907eb] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.408] [INFO] [c50226a4701b42508153e98feca6dde4] zshop - Process GET /static/images/product/good3.jpg...
+[2022-05-07T20:15:06.409] [INFO] [c50226a4701b42508153e98feca6dde4] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.414] [INFO] [ed14a69d129f46beae50e6b9822f668c] zshop - Process GET /static/images/product/good4.jpg...
+[2022-05-07T20:15:06.415] [INFO] [ed14a69d129f46beae50e6b9822f668c] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.416] [INFO] [ed14a69d129f46beae50e6b9822f668c] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.424] [INFO] [9db0ce59183e4903b84196692db6e802] zshop - Process GET /static/images/product/good5.jpg...
+[2022-05-07T20:15:06.428] [INFO] [bcbb4387fa424786a4a2118d39b38b7b] zshop - Process GET /static/images/product/good6.jpg...
+[2022-05-07T20:15:06.428] [INFO] [9ddf52266cd543dd8e7e1c63cf6f6ded] zshop - Process GET /static/images/center-icon-order-all.png...
+[2022-05-07T20:15:06.429] [INFO] [9ddf52266cd543dd8e7e1c63cf6f6ded] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.430] [INFO] [43eef0f4f595439e802ba0641980016a] zshop - Process GET /static/images/center-icon-order-dfk.png...
+[2022-05-07T20:15:06.435] [INFO] [ab0c39ad138a4a0f8e6fe49f960caf89] zshop - Process GET /static/images/center-icon-order-dfh.png...
+[2022-05-07T20:15:06.435] [INFO] [ab0c39ad138a4a0f8e6fe49f960caf89] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.436] [INFO] [ab0c39ad138a4a0f8e6fe49f960caf89] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.436] [INFO] [5bb76a32268c4431aee8d32d593f19a1] zshop - Process GET /static/images/center-icon-order-dsh.png...
+[2022-05-07T20:15:06.437] [INFO] [5bb76a32268c4431aee8d32d593f19a1] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.442] [INFO] [e38cb61050ce48f5bcc591acc6921831] zshop - Process GET /static/images/center-icon-order-dpj.png...
+[2022-05-07T20:15:06.442] [INFO] [184826042410473b96ffd45cb8777bb2] zshop - Process GET /static/images/center-icon-sc.png...
+[2022-05-07T20:15:06.443] [INFO] [184826042410473b96ffd45cb8777bb2] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.443] [INFO] [4e5068d6aa0d4785811f4e283339a4a0] zshop - Process GET /static/images/center-icon-dlmm.png...
+[2022-05-07T20:15:06.443] [INFO] [4e5068d6aa0d4785811f4e283339a4a0] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.444] [INFO] [ee3c876d67174c189585171d247638ad] zshop - Process GET /static/images/center-icon-out.png...
+[2022-05-07T20:15:06.448] [INFO] [696db8c74c854c78a2e7af0b74f9b699] zshop - Process GET /static/images/index_on.png...
+[2022-05-07T20:15:06.449] [INFO] [696db8c74c854c78a2e7af0b74f9b699] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.449] [INFO] [696db8c74c854c78a2e7af0b74f9b699] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.450] [INFO] [696db8c74c854c78a2e7af0b74f9b699] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.450] [INFO] [696db8c74c854c78a2e7af0b74f9b699] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.450] [INFO] [77adec98a74c48f2aabc503380c4caba] zshop - Process GET /static/images/goods.png...
+[2022-05-07T20:15:06.451] [INFO] [77adec98a74c48f2aabc503380c4caba] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.456] [INFO] [77adec98a74c48f2aabc503380c4caba] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.457] [INFO] [7f5974eba60b4b44b8d95a6e7608fa6e] zshop - Process GET /static/images/cart.png...
+[2022-05-07T20:15:06.457] [INFO] [8a152fa2d76d4732872099127f006a59] zshop - Process GET /static/images/my.png...
+[2022-05-07T20:15:06.458] [INFO] [4f428d602ec04c038f9f4d7e79b86d4c] zshop - Process GET /static/js/app/index-main.js...
+[2022-05-07T20:15:06.462] [INFO] [4f428d602ec04c038f9f4d7e79b86d4c] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.463] [INFO] [4f428d602ec04c038f9f4d7e79b86d4c] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.464] [INFO] [4f428d602ec04c038f9f4d7e79b86d4c] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.464] [INFO] [4f428d602ec04c038f9f4d7e79b86d4c] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.471] [INFO] [053a0b6b7a2746dcb619a77be7f41e9c] zshop - Process GET /static/js/app/index.js...
+[2022-05-07T20:15:06.472] [INFO] [053a0b6b7a2746dcb619a77be7f41e9c] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.490] [INFO] [5d4f8b4809de4518ac3d0fa8087b7ede] zshop - Process GET /static/js/lib/jquery.js...
+[2022-05-07T20:15:06.490] [INFO] [4fe2302160914e368dc31eacff6ca5da] zshop - Process GET /static/js/lib/vue.min.js...
+[2022-05-07T20:15:06.490] [INFO] [5d05510d1f654eba8ca0015c93af9b5e] zshop - Process GET /static/js/lib/vue-resource.min.js...
+[2022-05-07T20:15:06.491] [INFO] [7b0d69a1d4cc45b384db5c547eedd0c7] zshop - Process GET /static/js/app/public-tip.js...
+[2022-05-07T20:15:06.491] [INFO] [b37299c60c75460d89edb98651737667] zshop - Process GET /static/js/lib/swiper-4.1.6.min.js...
+[2022-05-07T20:15:06.492] [INFO] [f227d99407ae48d683ffe68ecae14857] zshop - Process GET /static/js/app/public.js...
+[2022-05-07T20:15:06.493] [INFO] [f227d99407ae48d683ffe68ecae14857] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.497] [INFO] [f227d99407ae48d683ffe68ecae14857] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.497] [INFO] [f227d99407ae48d683ffe68ecae14857] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.498] [INFO] [f227d99407ae48d683ffe68ecae14857] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.498] [INFO] [f227d99407ae48d683ffe68ecae14857] zshop - ctx.response.status=200
+[2022-05-07T20:15:06.498] [INFO] [f227d99407ae48d683ffe68ecae14857] zshop - ctx.response.status=200
+[2022-05-07T20:15:07.898] [INFO] [9fdea6fbdf0a4ef1b45690a0df48b623] zshop - Process GET /zshop/prodDetail/2...
+[2022-05-07T20:15:07.899] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `groupId`, `name`, `description`, `price`, `image`, `recommend`, `sales`, `stock`, `detailImages`, `detailHtml`, `createdAt`, `updatedAt`, `version` FROM `product` AS `product` WHERE `product`.`id` = 2;
+[2022-05-07T20:15:07.902] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `prodGroup`, `attriId`, `attriName`, `createdAt`, `updatedAt`, `version` FROM `group_attri` AS `group_attri` WHERE `group_attri`.`prodGroup` = 2;
+[2022-05-07T20:15:07.907] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT t.attriId, t.attriName, t1.attriValue, t2.prodId FROM group_attri t LEFT JOIN group_attri_value t1 ON t.id = t1.groupAttriId LEFT JOIN prod_attri t2 ON t1.id = t2.groupAttriValueId WHERE t.prodGroup = 2
+[2022-05-07T20:15:07.912] [INFO] [9fdea6fbdf0a4ef1b45690a0df48b623] zshop - ctx.response.status=200
+[2022-05-07T20:15:07.930] [INFO] [1d15d122d07e4ea4b1135e81d59587db] zshop - Process GET /static/css/weui.min.css...
+[2022-05-07T20:15:07.931] [INFO] [9d2878d4c64a4a8ebf56dc7adc4b5579] zshop - Process GET /static/css/style.css...
+[2022-05-07T20:15:07.931] [INFO] [a63fd1a2e1474d21bfdffe73430213ca] zshop - Process GET /static/css/swiper-4.1.6.min.css...
+[2022-05-07T20:15:07.932] [INFO] [3d4021e7277349328c83edc7aa9bf63c] zshop - Process GET /static/js/lib/require.js...
+[2022-05-07T20:15:07.932] [INFO] [b4cdc40d83574f468c2f9e687aec97ac] zshop - Process GET /static/images/product/detail/prod_detail4.jpg...
+[2022-05-07T20:15:07.938] [INFO] [00618e5e38304c6295c5da1ce832f13f] zshop - Process GET /static/images/product/detail/prod_detail5.jpg...
+[2022-05-07T20:15:07.939] [INFO] [00618e5e38304c6295c5da1ce832f13f] zshop - ctx.response.status=200
+[2022-05-07T20:15:07.939] [INFO] [00618e5e38304c6295c5da1ce832f13f] zshop - ctx.response.status=200
+[2022-05-07T20:15:07.940] [INFO] [00618e5e38304c6295c5da1ce832f13f] zshop - ctx.response.status=200
+[2022-05-07T20:15:07.940] [INFO] [00618e5e38304c6295c5da1ce832f13f] zshop - ctx.response.status=200
+[2022-05-07T20:15:07.948] [INFO] [00618e5e38304c6295c5da1ce832f13f] zshop - ctx.response.status=200
+[2022-05-07T20:15:07.949] [INFO] [00618e5e38304c6295c5da1ce832f13f] zshop - ctx.response.status=200
+[2022-05-07T20:15:07.950] [INFO] [d52333e501274214b7bcc8e7222af60e] zshop - Process GET /static/images/product/detail/prod_detail6.jpg...
+[2022-05-07T20:15:07.950] [INFO] [d52333e501274214b7bcc8e7222af60e] zshop - ctx.response.status=200
+[2022-05-07T20:15:07.953] [INFO] [c25a029d268f47a5ab5154ba3872192c] zshop - Process GET /static/images/product/detail/prod_detail7.jpg...
+[2022-05-07T20:15:07.956] [INFO] [c25a029d268f47a5ab5154ba3872192c] zshop - ctx.response.status=200
+[2022-05-07T20:15:07.980] [INFO] [5b13529dce7f48eda3260155eb502237] zshop - Process GET /static/js/app/prod-detail.js...
+[2022-05-07T20:15:07.980] [INFO] [5b13529dce7f48eda3260155eb502237] zshop - ctx.response.status=200
+[2022-05-07T20:15:08.002] [INFO] [66526a1fbccc4a129f50899077124a09] zshop - Process GET /static/js/lib/jquery.js...
+[2022-05-07T20:15:08.002] [INFO] [268575c4c8834949a63f4dd925e6611e] zshop - Process GET /static/js/app/public-tip.js...
+[2022-05-07T20:15:08.003] [INFO] [0338d10cdc5b4718b769b09cb2ca8f23] zshop - Process GET /static/js/lib/swiper-4.1.6.min.js...
+[2022-05-07T20:15:08.003] [INFO] [0338d10cdc5b4718b769b09cb2ca8f23] zshop - ctx.response.status=200
+[2022-05-07T20:15:08.004] [INFO] [0338d10cdc5b4718b769b09cb2ca8f23] zshop - ctx.response.status=200
+[2022-05-07T20:15:08.008] [INFO] [0338d10cdc5b4718b769b09cb2ca8f23] zshop - ctx.response.status=200
+[2022-05-07T20:15:08.019] [INFO] [5d03ac99c55344edbba8e63b9c737ee8] zshop - Process GET /static/images/icon-back.png...
+[2022-05-07T20:15:08.020] [INFO] [7add3de9c0a74e5d81e7cd70c7d43eed] zshop - Process GET /static/images/index_bak.png...
+[2022-05-07T20:15:08.020] [INFO] [1492882c082d4303bab3ed54c7ced3f3] zshop - Process GET /static/images/icon-kefu.png...
+[2022-05-07T20:15:08.025] [INFO] [ce9c1a94e5024fa3932bed824e8cc3cb] zshop - Process GET /static/images/icon-collection.png...
+[2022-05-07T20:15:08.025] [INFO] [ce9c1a94e5024fa3932bed824e8cc3cb] zshop - ctx.response.status=200
+[2022-05-07T20:15:08.026] [INFO] [ce9c1a94e5024fa3932bed824e8cc3cb] zshop - ctx.response.status=200
+[2022-05-07T20:15:08.026] [INFO] [ce9c1a94e5024fa3932bed824e8cc3cb] zshop - ctx.response.status=200
+[2022-05-07T20:15:08.026] [INFO] [3c2478ce547045908aebfcc401a1bce8] zshop - Process GET /static/images/footer03.png...
+[2022-05-07T20:15:08.027] [INFO] [3c2478ce547045908aebfcc401a1bce8] zshop - ctx.response.status=200
+[2022-05-07T20:15:08.032] [INFO] [3c2478ce547045908aebfcc401a1bce8] zshop - ctx.response.status=200
+[2022-05-07T20:15:08.175] [INFO] [ad1a761af24b42d9a520b91af445d6b9] zshop - Process GET /static/js/lib/jquery.Spinner.js...
+[2022-05-07T20:15:08.176] [INFO] [ad1a761af24b42d9a520b91af445d6b9] zshop - ctx.response.status=200
+[2022-05-07T20:15:08.225] [INFO] [fd420fe4c06541ff961de9b873fa170d] zshop - Process GET /static/images/BuynBtn.png...
+[2022-05-07T20:15:08.225] [INFO] [fd420fe4c06541ff961de9b873fa170d] zshop - ctx.response.status=200
+[2022-05-07T20:15:15.604] [INFO] [fbb7728710e54c58863c9a2e34e65806] zshop - Process POST /zshop/userapi/collection/act...
+[2022-05-07T20:15:15.605] [INFO] [fbb7728710e54c58863c9a2e34e65806] zshop - Process API POST /zshop/userapi/collection/act...
+[2022-05-07T20:15:15.605] [INFO] [fbb7728710e54c58863c9a2e34e65806] zshop - ctx.response.status=400
+[2022-05-07T20:15:15.616] [INFO] [5f9e2c8dc89e4b34a976c1a212d88d40] zshop - Process GET /zshop/login?loginSuccUrl=/zshop/prodDetail/2...
+[2022-05-07T20:15:15.622] [INFO] [5f9e2c8dc89e4b34a976c1a212d88d40] zshop - ctx.response.status=200
+[2022-05-07T20:15:15.638] [INFO] [6595c451d1e54c9d9ce3533f21e5b663] zshop - Process GET /static/css/weui.min.css...
+[2022-05-07T20:15:15.638] [INFO] [c9c350ba3b7b4edf9126f04a2ffe1d45] zshop - Process GET /static/css/style.css...
+[2022-05-07T20:15:15.639] [INFO] [75259d62ea324851995300ceb9209069] zshop - Process GET /static/js/lib/require.js...
+[2022-05-07T20:15:15.640] [INFO] [57d8b8c07325486caa2827089c9d1511] zshop - Process GET /static/images/vcode.jpg...
+[2022-05-07T20:15:15.644] [INFO] [57d8b8c07325486caa2827089c9d1511] zshop - ctx.response.status=200
+[2022-05-07T20:15:15.645] [INFO] [57d8b8c07325486caa2827089c9d1511] zshop - ctx.response.status=200
+[2022-05-07T20:15:15.650] [INFO] [57d8b8c07325486caa2827089c9d1511] zshop - ctx.response.status=200
+[2022-05-07T20:15:15.650] [INFO] [57d8b8c07325486caa2827089c9d1511] zshop - ctx.response.status=200
+[2022-05-07T20:15:15.685] [INFO] [659b3317c7e643258ff0855a2157ba64] zshop - Process GET /static/js/app/login.js...
+[2022-05-07T20:15:15.686] [INFO] [659b3317c7e643258ff0855a2157ba64] zshop - ctx.response.status=200
+[2022-05-07T20:15:15.698] [INFO] [dac67bf1379f449584759666036a6b0f] zshop - Process GET /static/js/lib/jquery.js...
+[2022-05-07T20:15:15.699] [INFO] [4aa21315bf09408b81842c49c7a4471f] zshop - Process GET /static/js/app/public-tip.js...
+[2022-05-07T20:15:15.700] [INFO] [4aa21315bf09408b81842c49c7a4471f] zshop - ctx.response.status=200
+[2022-05-07T20:15:15.700] [INFO] [4aa21315bf09408b81842c49c7a4471f] zshop - ctx.response.status=200
+[2022-05-07T20:15:15.718] [INFO] [7cb1dfa201fb4cbbb236944499cffe70] zshop - Process GET /static/images/icon-back.png...
+[2022-05-07T20:15:15.719] [INFO] [fb1f249d5fda45c1b4b997572a5aa1b6] zshop - Process GET /static/images/index_bak.png...
+[2022-05-07T20:15:15.723] [INFO] [fb1f249d5fda45c1b4b997572a5aa1b6] zshop - ctx.response.status=200
+[2022-05-07T20:15:15.723] [INFO] [fb1f249d5fda45c1b4b997572a5aa1b6] zshop - ctx.response.status=200
+[2022-05-07T20:15:18.178] [INFO] [4a32fa6331dc423e8fa2484b00069e9a] zshop - Process GET /zshop/user/cart...
+[2022-05-07T20:15:18.179] [INFO] [4a32fa6331dc423e8fa2484b00069e9a] zshop - ctx.response.status=302
+[2022-05-07T20:15:18.181] [INFO] [901b1341a0ff4b898266513ff6e49b64] zshop - Process GET /zshop/login?loginSuccUrl=/zshop/user/cart...
+[2022-05-07T20:15:18.187] [INFO] [901b1341a0ff4b898266513ff6e49b64] zshop - ctx.response.status=200
+[2022-05-07T20:15:18.202] [INFO] [03407b32c41049b5ae6c2bd74c084132] zshop - Process GET /static/css/weui.min.css...
+[2022-05-07T20:15:18.205] [INFO] [c5271198b651411a90c96788db82e0ee] zshop - Process GET /static/css/style.css...
+[2022-05-07T20:15:18.206] [INFO] [e665eeb86ab14896a3a53ea9a97ebacf] zshop - Process GET /static/js/lib/require.js...
+[2022-05-07T20:15:18.206] [INFO] [e3a12d9352e14710a765cc24e8f7a8a2] zshop - Process GET /static/images/vcode.jpg...
+[2022-05-07T20:15:18.207] [INFO] [e3a12d9352e14710a765cc24e8f7a8a2] zshop - ctx.response.status=200
+[2022-05-07T20:15:18.207] [INFO] [e3a12d9352e14710a765cc24e8f7a8a2] zshop - ctx.response.status=200
+[2022-05-07T20:15:18.207] [INFO] [e3a12d9352e14710a765cc24e8f7a8a2] zshop - ctx.response.status=200
+[2022-05-07T20:15:18.208] [INFO] [e3a12d9352e14710a765cc24e8f7a8a2] zshop - ctx.response.status=200
+[2022-05-07T20:15:18.242] [INFO] [03c8aa6517714f79ae7ea2c7c274782f] zshop - Process GET /static/js/app/login.js...
+[2022-05-07T20:15:18.242] [INFO] [03c8aa6517714f79ae7ea2c7c274782f] zshop - ctx.response.status=200
+[2022-05-07T20:15:18.256] [INFO] [5f0ff4a3b70643d4aa19061304e2d0ac] zshop - Process GET /static/js/lib/jquery.js...
+[2022-05-07T20:15:18.257] [INFO] [3b46a35c477d42dea1ca9230766d2410] zshop - Process GET /static/js/app/public-tip.js...
+[2022-05-07T20:15:18.258] [INFO] [3b46a35c477d42dea1ca9230766d2410] zshop - ctx.response.status=200
+[2022-05-07T20:15:18.258] [INFO] [3b46a35c477d42dea1ca9230766d2410] zshop - ctx.response.status=200
+[2022-05-07T20:15:18.277] [INFO] [28231b76c7d648c69c5424ede85e841c] zshop - Process GET /static/images/icon-back.png...
+[2022-05-07T20:15:18.277] [INFO] [a905ace8f4634302866e963b61639415] zshop - Process GET /static/images/index_bak.png...
+[2022-05-07T20:15:18.278] [INFO] [a905ace8f4634302866e963b61639415] zshop - ctx.response.status=200
+[2022-05-07T20:15:18.279] [INFO] [a905ace8f4634302866e963b61639415] zshop - ctx.response.status=200
+[2022-05-07T20:15:19.704] [INFO] [63ef667e8e364ccba32ca8aa7ffa11f5] zshop - Process GET /static/js/app/index-main.js...
+[2022-05-07T20:15:19.705] [INFO] [63ef667e8e364ccba32ca8aa7ffa11f5] zshop - ctx.response.status=200
+[2022-05-07T20:15:19.711] [INFO] [2473e9b3b7d849089b56a946d01f4b54] zshop - Process GET /static/js/app/index.js...
+[2022-05-07T20:15:19.712] [INFO] [2473e9b3b7d849089b56a946d01f4b54] zshop - ctx.response.status=200
+[2022-05-07T20:15:19.725] [INFO] [ae9eede28dc249879d304eaee0e995c4] zshop - Process GET /static/js/lib/jquery.js...
+[2022-05-07T20:15:19.725] [INFO] [4c2c8b11653f4fe7909f3a919fc538aa] zshop - Process GET /static/js/lib/vue.min.js...
+[2022-05-07T20:15:19.726] [INFO] [d184d71bebd349b2826aab6737cc6cce] zshop - Process GET /static/js/lib/vue-resource.min.js...
+[2022-05-07T20:15:19.726] [INFO] [34aebf76493342049c956c2e671c689c] zshop - Process GET /static/js/app/public-tip.js...
+[2022-05-07T20:15:19.727] [INFO] [be1b543f22d24e3abe926c44473d185d] zshop - Process GET /static/js/lib/swiper-4.1.6.min.js...
+[2022-05-07T20:15:19.727] [INFO] [1a57f25ef1654d979a08f37e39c7c6ce] zshop - Process GET /static/js/app/public.js...
+[2022-05-07T20:15:19.727] [INFO] [1a57f25ef1654d979a08f37e39c7c6ce] zshop - ctx.response.status=200
+[2022-05-07T20:15:19.728] [INFO] [1a57f25ef1654d979a08f37e39c7c6ce] zshop - ctx.response.status=200
+[2022-05-07T20:15:19.728] [INFO] [1a57f25ef1654d979a08f37e39c7c6ce] zshop - ctx.response.status=200
+[2022-05-07T20:15:19.728] [INFO] [1a57f25ef1654d979a08f37e39c7c6ce] zshop - ctx.response.status=200
+[2022-05-07T20:15:19.733] [INFO] [1a57f25ef1654d979a08f37e39c7c6ce] zshop - ctx.response.status=200
+[2022-05-07T20:15:19.733] [INFO] [1a57f25ef1654d979a08f37e39c7c6ce] zshop - ctx.response.status=200
+[2022-05-07T20:15:23.675] [INFO] [e289f3b0503d4eddb0a548c0ee19a5e7] zshop - Process GET /zshop/prodDetail/4...
+[2022-05-07T20:15:23.679] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `groupId`, `name`, `description`, `price`, `image`, `recommend`, `sales`, `stock`, `detailImages`, `detailHtml`, `createdAt`, `updatedAt`, `version` FROM `product` AS `product` WHERE `product`.`id` = 4;
+[2022-05-07T20:15:23.685] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT `id`, `prodGroup`, `attriId`, `attriName`, `createdAt`, `updatedAt`, `version` FROM `group_attri` AS `group_attri` WHERE `group_attri`.`prodGroup` = 4;
+[2022-05-07T20:15:23.688] [INFO] [a42df0ba972241b59c4fa519a2addc8d] system - Executing (default): SELECT t.attriId, t.attriName, t1.attriValue, t2.prodId FROM group_attri t LEFT JOIN group_attri_value t1 ON t.id = t1.groupAttriId LEFT JOIN prod_attri t2 ON t1.id = t2.groupAttriValueId WHERE t.prodGroup = 4
+[2022-05-07T20:15:23.699] [INFO] [e289f3b0503d4eddb0a548c0ee19a5e7] zshop - ctx.response.status=200
+[2022-05-07T20:15:23.716] [INFO] [88a890fee442459f9c62de0c3d60ae21] zshop - Process GET /static/css/weui.min.css...
+[2022-05-07T20:15:23.719] [INFO] [1c615e012d8f4e579c8e9825e7d1d606] zshop - Process GET /static/css/style.css...
+[2022-05-07T20:15:23.720] [INFO] [842481166ff64d4f95bf6127aeb47eb9] zshop - Process GET /static/css/swiper-4.1.6.min.css...
+[2022-05-07T20:15:23.720] [INFO] [2590f7906eab46319ff2e6df906f9655] zshop - Process GET /static/js/lib/require.js...
+[2022-05-07T20:15:23.721] [INFO] [f8f85a12972941deb45627de5efe24a8] zshop - Process GET /static/images/product/detail/prod_detail12.jpg...
+[2022-05-07T20:15:23.721] [INFO] [f8f85a12972941deb45627de5efe24a8] zshop - ctx.response.status=200
+[2022-05-07T20:15:23.726] [INFO] [f8f85a12972941deb45627de5efe24a8] zshop - ctx.response.status=200
+[2022-05-07T20:15:23.727] [INFO] [f8f85a12972941deb45627de5efe24a8] zshop - ctx.response.status=200
+[2022-05-07T20:15:23.727] [INFO] [f8f85a12972941deb45627de5efe24a8] zshop - ctx.response.status=200
+[2022-05-07T20:15:23.728] [INFO] [f8f85a12972941deb45627de5efe24a8] zshop - ctx.response.status=200
+[2022-05-07T20:15:23.764] [INFO] [44161dc761f74cf891a9bd2203ffa5c6] zshop - Process GET /static/js/app/prod-detail.js...
+[2022-05-07T20:15:23.765] [INFO] [44161dc761f74cf891a9bd2203ffa5c6] zshop - ctx.response.status=200
+[2022-05-07T20:15:23.789] [INFO] [fc07fd87019748e399b6d6706a61e18e] zshop - Process GET /static/js/lib/jquery.js...
+[2022-05-07T20:15:23.790] [INFO] [5fd0b93c038d4d0d8ba038dac11d0ae3] zshop - Process GET /static/js/app/public-tip.js...
+[2022-05-07T20:15:23.790] [INFO] [46b74d4e12224c4b96d58eba8d56e5ea] zshop - Process GET /static/js/lib/swiper-4.1.6.min.js...
+[2022-05-07T20:15:23.791] [INFO] [46b74d4e12224c4b96d58eba8d56e5ea] zshop - ctx.response.status=200
+[2022-05-07T20:15:23.791] [INFO] [46b74d4e12224c4b96d58eba8d56e5ea] zshop - ctx.response.status=200
+[2022-05-07T20:15:23.792] [INFO] [46b74d4e12224c4b96d58eba8d56e5ea] zshop - ctx.response.status=200
+[2022-05-07T20:15:23.800] [INFO] [c6ccf64fa1a24990b5ad496a824dcfa2] zshop - Process GET /static/images/icon-back.png...
+[2022-05-07T20:15:23.803] [INFO] [ce37649602054f7c8419d54aabc953b3] zshop - Process GET /static/images/index_bak.png...
+[2022-05-07T20:15:23.804] [INFO] [4f54901b4b9a49b5bb79bb51fb741b68] zshop - Process GET /static/images/icon-kefu.png...
+[2022-05-07T20:15:23.805] [INFO] [10cbeb0709154cbbad4c80b40f8f4069] zshop - Process GET /static/images/icon-collection.png...
+[2022-05-07T20:15:23.806] [INFO] [10cbeb0709154cbbad4c80b40f8f4069] zshop - ctx.response.status=200
+[2022-05-07T20:15:23.810] [INFO] [10cbeb0709154cbbad4c80b40f8f4069] zshop - ctx.response.status=200
+[2022-05-07T20:15:23.810] [INFO] [10cbeb0709154cbbad4c80b40f8f4069] zshop - ctx.response.status=200
+[2022-05-07T20:15:23.811] [INFO] [ee3b78bca1354e9caa9675b7abc4868b] zshop - Process GET /static/images/footer03.png...
+[2022-05-07T20:15:23.811] [INFO] [ee3b78bca1354e9caa9675b7abc4868b] zshop - ctx.response.status=200
+[2022-05-07T20:15:23.812] [INFO] [ee3b78bca1354e9caa9675b7abc4868b] zshop - ctx.response.status=200
+[2022-05-07T20:15:23.947] [INFO] [5e0fc06fd9744f49b7c1eb99bf456163] zshop - Process GET /static/js/lib/jquery.Spinner.js...
+[2022-05-07T20:15:23.948] [INFO] [5e0fc06fd9744f49b7c1eb99bf456163] zshop - ctx.response.status=200
+[2022-05-07T20:15:23.997] [INFO] [f9774258cbb24a1682128703994f2339] zshop - Process GET /static/images/BuynBtn.png...
+[2022-05-07T20:15:23.998] [INFO] [f9774258cbb24a1682128703994f2339] zshop - ctx.response.status=200
+[2022-05-07T20:15:26.609] [INFO] [450d7eeb251f47e3aa9c03b917ff76ec] zshop - Process POST /zshop/userapi/addCartProd...
+[2022-05-07T20:15:26.610] [INFO] [450d7eeb251f47e3aa9c03b917ff76ec] zshop - Process API POST /zshop/userapi/addCartProd...
+[2022-05-07T20:15:26.610] [INFO] [450d7eeb251f47e3aa9c03b917ff76ec] zshop - ctx.response.status=400
+[2022-05-07T20:15:26.616] [INFO] [3bb54fb0f7b545adb6042c07567c028b] zshop - Process GET /zshop/login?loginSuccUrl=/zshop/prodDetail/4...
+[2022-05-07T20:15:26.618] [INFO] [3bb54fb0f7b545adb6042c07567c028b] zshop - ctx.response.status=200
+[2022-05-07T20:15:26.633] [INFO] [be3c97f83b6048e88bfed5aab3f21d88] zshop - Process GET /static/css/weui.min.css...
+[2022-05-07T20:15:26.636] [INFO] [46e935f117b04a1b95a69fadde562868] zshop - Process GET /static/css/style.css...
+[2022-05-07T20:15:26.636] [INFO] [07a7671a527b45c1aa6253decfbbd9a1] zshop - Process GET /static/js/lib/require.js...
+[2022-05-07T20:15:26.636] [INFO] [750d2101a37e466daa85ae2f94fa6a3a] zshop - Process GET /static/images/vcode.jpg...
+[2022-05-07T20:15:26.637] [INFO] [750d2101a37e466daa85ae2f94fa6a3a] zshop - ctx.response.status=200
+[2022-05-07T20:15:26.638] [INFO] [750d2101a37e466daa85ae2f94fa6a3a] zshop - ctx.response.status=200
+[2022-05-07T20:15:26.638] [INFO] [750d2101a37e466daa85ae2f94fa6a3a] zshop - ctx.response.status=200
+[2022-05-07T20:15:26.643] [INFO] [750d2101a37e466daa85ae2f94fa6a3a] zshop - ctx.response.status=200
+[2022-05-07T20:15:26.684] [INFO] [f2ea96faedd544758c888bd2bc84cf31] zshop - Process GET /static/js/app/login.js...
+[2022-05-07T20:15:26.685] [INFO] [f2ea96faedd544758c888bd2bc84cf31] zshop - ctx.response.status=200
+[2022-05-07T20:15:26.700] [INFO] [60dd1f659d084cfca02938474a6f81ad] zshop - Process GET /static/js/lib/jquery.js...
+[2022-05-07T20:15:26.700] [INFO] [ed183c3a3b124caa9e1f6b584b9adfa0] zshop - Process GET /static/js/app/public-tip.js...
+[2022-05-07T20:15:26.701] [INFO] [ed183c3a3b124caa9e1f6b584b9adfa0] zshop - ctx.response.status=200
+[2022-05-07T20:15:26.701] [INFO] [ed183c3a3b124caa9e1f6b584b9adfa0] zshop - ctx.response.status=200
+[2022-05-07T20:15:26.706] [INFO] [ad0d74dc398143c198cdbb115ed9a00a] zshop - Process GET /static/images/icon-back.png...
+[2022-05-07T20:15:26.706] [INFO] [eb3110d99f034f12a41c6c7bd61ca22b] zshop - Process GET /static/images/index_bak.png...
+[2022-05-07T20:15:26.707] [INFO] [eb3110d99f034f12a41c6c7bd61ca22b] zshop - ctx.response.status=200
+[2022-05-07T20:15:26.707] [INFO] [eb3110d99f034f12a41c6c7bd61ca22b] zshop - ctx.response.status=200
+[2022-05-07T20:15:32.736] [INFO] [ccde548aac7c4f25a0b1cf67b4ea912e] zshop - Process GET /zshop/resetPass?mobile=...
+[2022-05-07T20:15:32.738] [INFO] [ccde548aac7c4f25a0b1cf67b4ea912e] zshop - ctx.response.status=200
+[2022-05-07T20:15:32.746] [INFO] [9adce3db7e9e4cb39096fe403d7b90ca] zshop - Process GET /static/css/weui.min.css...
+[2022-05-07T20:15:32.747] [INFO] [64fa9dfac6eb4055a79b268e94a303e6] zshop - Process GET /static/css/style.css...
+[2022-05-07T20:15:32.748] [INFO] [64fa9dfac6eb4055a79b268e94a303e6] zshop - ctx.response.status=200
+[2022-05-07T20:15:32.748] [INFO] [64fa9dfac6eb4055a79b268e94a303e6] zshop - ctx.response.status=200
+[2022-05-07T20:15:32.816] [INFO] [423cc1cf24a44d3ba9fc104f7de1dd91] zshop - Process GET /static/images/icon-back.png...
+[2022-05-07T20:15:32.817] [INFO] [0b4da3ad58c44f39aeee37bb6fc46eb5] zshop - Process GET /static/images/index_bak.png...
+[2022-05-07T20:15:32.818] [INFO] [0b4da3ad58c44f39aeee37bb6fc46eb5] zshop - ctx.response.status=200
+[2022-05-07T20:15:32.818] [INFO] [0b4da3ad58c44f39aeee37bb6fc46eb5] zshop - ctx.response.status=200
